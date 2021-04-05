@@ -58,7 +58,7 @@ p{
 nav {
     margin: 27px auto 0;
     position: relative;
-    width: fit-content;
+    width: max-content;
     height: 50px;
     background-color: #34495e;
     border-radius: 8px;
