@@ -27,22 +27,22 @@ section{
 
 /*--text--*/
 h1, h2, h3, h4, p{
-    padding: 0.5rem;
+    padding: 0.5vw;
 }
 
 h1{
-    font-size: 5rem;
+    font-size: 5vw;
 }
 
 h2{
-    font-size: 2.4rem;
+    font-size: 2.4vw;
 }
 
 h3{
-    font-size: 2.3rem;
+    font-size: 2.3vw;
 }
 h4{
-  font-size: 2.2rem;
+  font-size: 2.2vw;
 }
 
 p, figcaption{
@@ -56,8 +56,8 @@ nav {
     position: fixed;
     font-weight: bold;
     z-index: 10;
-    padding: 0.5rem 1rem;
-    border-radius: 0 0 0 0.3rem;
+    padding: 0.5vw 1vw;
+    border-radius: 0 0 0 0.3vw;
     box-shadow: -1px 1px 5px 0 rgba(0, 0, 0, 0.5);
     right: 0;
     background-color: rgba(0, 0, 0, 0.5)
@@ -69,8 +69,8 @@ nav {
 nav a {
     color: var(--nav-text);
     text-decoration: none;
-    padding: 0.5rem;
-    font-size: 1.5rem;
+    padding: 0.5vw;
+    font-size: 1.5vw;
     line-height: 1.5;
     color: white;
 }
@@ -95,11 +95,11 @@ nav a {
 #colorChangeButtons {
     position: fixed;
     z-index: 10;
-    bottom: 1rem;
+    bottom: 1vw;
     overflow: auto;
-    height: 20rem;
-    left: 1rem;
-    border-radius: 1rem;
+    height: 20vw;
+    left: 1vw;
+    border-radius: 1vw;
     background-color: rgba(52, 73, 94, 0.98);
     box-shadow: var(--shadow);
 }
@@ -111,7 +111,7 @@ nav a {
 #colorChangeButtons a{
     color: white;
     display: block;
-    width: 10rem;
+    width: 10vw;
 }
 
 .open, .close{
@@ -124,7 +124,7 @@ nav a {
   flex-direction: row;
   align-content: center;
   align-items: center;
-  padding: 1rem 15rem;
+  padding: 1vw 15vw;
 }
 
 h1, h2{
@@ -202,7 +202,7 @@ h3, p{
 
     .closebtn, #openMenu{
         display: block;
-        padding: 1rem;
+        padding: 1vw;
         cursor: pointer;
     }
 
@@ -228,7 +228,7 @@ h3, p{
 
         nav .closebtn {
           font-size: 60px;
-          right: 1rem;
+          right: 1vw;
           position: absolute;
           width: auto;
           top: 0;

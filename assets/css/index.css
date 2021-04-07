@@ -6,7 +6,7 @@ section{
   justify-content: center;
   z-index: -1;
   display: flex;
-  padding-bottom:1rem;
+  padding-bottom:1vw;
 }
 
 main article:first-child section>*{
@@ -36,7 +36,7 @@ section>*{
 
 #about section>*:nth-child(even){
   border-left: 1px solid #556784;
-  margin: 2rem auto;
+  margin: 2vw auto;
 }
 
 main> article{
@@ -75,7 +75,7 @@ h1{
 }
 
 #about h2{
-  font-size:4rem;
+  font-size:4vw;
 }
 
 article:not(#about) h2{
@@ -85,11 +85,11 @@ article:not(#about) h2{
 @media(max-width: 800px){
     h1, h2{
         width: 60%;
-        font-size: 2.4rem;
+        font-size: 2.4vw;
     }
 
     h2{
-        font-size: 1.5rem;
+        font-size: 1.5vw;
         font-weight: normal;
     }
 }
