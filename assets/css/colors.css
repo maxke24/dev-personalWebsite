@@ -1,12 +1,12 @@
-:root{
-    --primary: #89ABE3FF;
-    --nav: #FCF6F5FF;
-    --nav-text: #20202080;
-    --start-gradient: #FCF6F5FF;
-    --end-gradient: #FCF6F5FF;
-    --articles: linear-gradient(to top left, var(--start-gradient), var(--end-gradient));
-    --shadow: 1px 1px 5px 0px;
-    --headers: var(--nav-text);
-    --subText: var(--nav-text);
-    --border-color: #b76d68;
+:root {
+  --primary: #89ABE3FF;
+  --nav: #FCF6F5FF;
+  --nav-text: #20202080;
+  --start-gradient: #FCF6F5FF;
+  --end-gradient: #FCF6F5FF;
+  --articles: linear-gradient(to top left, var(--start-gradient), var(--end-gradient));
+  --shadow: 1px 1px 5px 0px;
+  --headers: var(--nav-text);
+  --subText: var(--nav-text);
+  --border-color: #b76d68
 }
