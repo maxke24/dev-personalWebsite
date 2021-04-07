@@ -1,0 +1,28 @@
+body{
+    overflow: hidden;
+}
+
+article{
+    width: 100%;
+    left: 0;
+    position: absolute;
+    margin-left: 0;
+    top: 0;
+    background-color: transparent;
+    height: 100%;
+}
+
+canvas{
+    z-index: -1;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+
+h1{
+    font-size: 128px;
+    transform: rotate(12deg) translate(-42%, -14%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}

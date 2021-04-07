@@ -1,0 +1,11 @@
+canvas{
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+
+form{
+    z-index: 15;
+    position: fixed;
+    color: white;
+}

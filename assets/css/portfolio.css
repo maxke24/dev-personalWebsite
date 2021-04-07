@@ -1,0 +1,35 @@
+main{
+  flex-flow: wrap;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+img{
+    width: 100%;
+    box-shadow: var(--shadow);
+}
+
+h1, img, figcaption{
+    margin-bottom: 1rem;
+}
+
+article{
+    background: inherit;
+    width: 20rem;
+    height: 45rem;
+    position: relative;
+    top: 2rem;
+    margin: 2rem 1rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    background-image: var(--articles);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+@media (max-width: 1840px) {
+    body{
+        overflow: auto;
+    }
+}

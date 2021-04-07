@@ -1,0 +1,235 @@
+/*--containers--*/
+body{
+    font-family: 'Lexend', sans-serif;
+    color: var(--headers);
+    height: 100%;
+    width: 100%;
+    background-color: var(--primary);
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+a{
+    text-decoration: none;
+    color: var(--subText);
+}
+
+article::-webkit-scrollbar {
+    display: none;
+}
+
+article{
+    -ms-overflow-style: none;
+}
+
+/*--text--*/
+h1, h2, h3, p{
+    padding: 0.5rem;
+}
+
+h1{
+    font-size: 32px;
+}
+
+h2{
+    font-size: 24px;
+}
+
+h3{
+    font-size: 22px;
+}
+
+p, figcaption{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+/*--Navigation--*/
+nav {
+    position: fixed;
+    font-weight: bold;
+    z-index: 10;
+    padding: 0.5rem 1rem;
+    border-radius: 0 0 0 1rem;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+#overlay{
+
+    float: right;
+}
+
+nav a {
+    color: var(--nav-text);
+    text-decoration: none;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: white;
+}
+
+nav #overlay a:hover{
+    color: lightgrey;
+}
+
+nav #overlay a:not(:last-child){
+    border-right: 1px solid white;
+}
+
+nav a {
+    text-decoration: none;
+    line-height: 1.5;
+}
+
+.closebtn, #openMenu{
+    display: none;
+}
+
+#colorChangeButtons {
+    position: fixed;
+    z-index: 10;
+    bottom: 1rem;
+    overflow: auto;
+    height: 20rem;
+    left: 1rem;
+    border-radius: 1rem;
+    background-color: rgba(52, 73, 94, 0.98);
+    box-shadow: var(--shadow);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#colorChangeButtons a{
+    color: white;
+    display: block;
+    width: 10rem;
+}
+
+.open, .close{
+  width: auto;;
+}
+
+#about article{
+  background-color: var(--nav);
+  color: var(--nav-text);
+}
+
+@media (max-width: 1050px) {
+    nav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        padding: 0;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        background-color: rgb(0,0,0);
+        background-color: rgba(52, 73, 94, 0.98);
+        overflow-x: hidden;
+        transition: 0.5s;
+        margin-top: 0;
+    }
+
+    #overlay, #colorChangeButtons {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        box-shadow: none;
+    }
+
+    nav a {
+        padding: 8px;
+        text-decoration: none;
+        font-size: 36px;
+        color: white;
+        display: block;
+        transition: 0.3s;
+        width: 100%;
+    }
+
+    nav a:hover, nav a:focus {
+        background-color: var(--primary);
+    }
+
+
+    nav .closebtn.animation{
+        background-color: var(--primary);
+    }
+
+    #openMenu{
+        font-size:30px;
+        cursor:pointer;
+        position: fixed;
+        z-index: 1;
+    }
+
+    nav .start-home, a:nth-child(1):hover~.animation{
+        display: none;
+    }
+
+    #colorChangeButtons a{
+      width: 100%;
+    }
+
+    #colorChangeButtons {
+    left: 0;
+    border-radius: 0;
+    height: auto;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+    .closebtn, #openMenu{
+        display: block;
+        padding: 1rem;
+        cursor: pointer;
+    }
+
+    a:nth-child(1) {
+        width: 100%;
+        text-align: center;
+        position: relative;
+    }
+    a:nth-child(2) {
+        width: 100%;
+    }
+    a:nth-child(3) {
+        width: 100%;
+    }
+    a:nth-child(4) {
+        width: 100%;
+    }
+
+    nav .start-home,nav .start-about, nav .start-portfolio, nav .start-contact, a:hover~.animation {
+        background-color: transparent;
+    }
+
+
+        nav .closebtn {
+          font-size: 60px;
+          right: 1rem;
+          position: absolute;
+          width: auto;
+          top: 0;
+          padding: 0;
+          line-height: 1;
+          z-index:2;
+        }
+
+        nav a:hover, nav a:focus{
+          background-color: transparent;
+        }
+        .open{
+          width: 100%;
+        }
+        .close{
+          width: 0%;
+        }
+}
