@@ -5,7 +5,7 @@
     --start-gradient: #FCF6F5FF;
     --end-gradient: #FCF6F5FF;
     --articles: linear-gradient(to top left, var(--start-gradient), var(--end-gradient));
-    --shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
+    --shadow: 1px 1px 5px 0px;
     --headers: var(--nav-text);
     --subText: var(--nav-text);
     --border-color: #b76d68;
