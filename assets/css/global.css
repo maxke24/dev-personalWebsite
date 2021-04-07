@@ -9,8 +9,7 @@ body{
     -webkit-user-select: none; /* Safari */
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
+    user-select: none;
 }
 
 a{
@@ -18,29 +17,32 @@ a{
     color: var(--subText);
 }
 
-article::-webkit-scrollbar {
+section::-webkit-scrollbar {
     display: none;
 }
 
-article{
+section{
     -ms-overflow-style: none;
 }
 
 /*--text--*/
-h1, h2, h3, p{
+h1, h2, h3, h4, p{
     padding: 0.5rem;
 }
 
 h1{
-    font-size: 32px;
+    font-size: 5rem;
 }
 
 h2{
-    font-size: 24px;
+    font-size: 2.4rem;
 }
 
 h3{
-    font-size: 22px;
+    font-size: 2.3rem;
+}
+h4{
+  font-size: 2.2rem;
 }
 
 p, figcaption{
@@ -55,12 +57,12 @@ nav {
     font-weight: bold;
     z-index: 10;
     padding: 0.5rem 1rem;
-    border-radius: 0 0 0 1rem;
+    border-radius: 0 0 0 0.3rem;
+    box-shadow: -1px 1px 5px 0 rgba(0, 0, 0, 0.5);
     right: 0;
     background-color: rgba(0, 0, 0, 0.5)
 }
 #overlay{
-
     float: right;
 }
 
@@ -116,9 +118,21 @@ nav a {
   width: auto;;
 }
 
-#about article{
+#about section{
   background-color: var(--nav);
   color: var(--nav-text);
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  padding: 1rem 15rem;
+}
+
+h1, h2{
+  align-self: flex-start;
+}
+
+h3, p{
+  align-self: flex-end;
 }
 
 @media (max-width: 1050px) {

@@ -1,13 +1,4 @@
-h1{
-    font-size: 5rem;
-}
-
-h2{
-    font-size: 2.4rem;
-}
-
-
-article{
+section{
   position: absolute;
   flex-flow: column;
   align-items: center;
@@ -18,38 +9,37 @@ article{
   padding-bottom:1rem;
 }
 
-main section:first-child article>*{
+main article:first-child section>*{
   width: 60%;
 }
 
-main>section:first-child {
+main>article:first-child {
   justify-content: center;
   box-shadow: var(--shadow);
 }
 
-section{
+article{
   display: flex;
   width: 100%;
   height: 100%;
   flex-flow:column;
 }
 
-article{
+section{
   position: relative;
 }
-article>*{
+section>*{
   width: 50%;
-
   text-align: left;
+  align-self: auto;
 }
 
-article>p:last-child{
-  border-bottom: 1px solid var(--nav-text);
-  padding-bottom: 2rem;
-  box-shadow: 0 8px 6px -7px rgba(142, 139, 138, 0.3);
+#about section>*:nth-child(even){
+  border-left: 1px solid #556784;
+  margin: 2rem auto;
 }
 
-main> section{
+main> article{
   position: relative;
   height: 100%;
 }
@@ -62,6 +52,14 @@ main:first-child{
   grid-area: about;
 }
 
+#about h2, #about h3{
+  color: #556784;
+}
+
+h4{
+  color: #89ABE3;
+}
+
 main{
   display: grid;
   grid-template-areas:
@@ -70,6 +68,18 @@ main{
   width: 100%;
   grid-template-rows: 100vh;
   position: absolute;
+}
+
+h1{
+    text-align: center;
+}
+
+#about h2{
+  font-size:4rem;
+}
+
+article:not(#about) h2{
+  text-align: center;
 }
 
 @media(max-width: 800px){

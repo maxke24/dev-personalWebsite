@@ -72,7 +72,7 @@ $(document).ready(function () {
 
                   closeNav();
               $('html, body').animate({
-            scrollTop: $("#about>article").offset().top
+            scrollTop: $("#about>section").offset().top
         }, 800);
         });
       }

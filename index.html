@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="assets/css/reset.css">
-<link rel="stylesheet" href="assets/css/colors.css">
-<link rel="stylesheet" href="assets/css/global.css">
-<link rel="stylesheet" href="assets/css/index.css">
 <head>
     <meta charset="UTF-8">
     <title>Home | personal website</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="true">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/colors.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/index.css">
     <!--font-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap" rel="stylesheet">
@@ -22,54 +24,58 @@
 </nav>
 
 <main>
-  <section>
-    <article>
+  <article>
+    <section>
       <h1>Welcome to my website!</h1>
       <h2>Hi, I'm Jelle Max, and I am a prospective data scientist, currently I am studying Applied Computer Sciences at Howest.</h2>
-    </article>
-  </section>
+    </section>
+  </article>
 
-<section id="about">
-  <article>
-      <h1>Computer skills</h1>
-      <h2>Ms office</h2>
+<article id="about">
+  <section>
+      <h2>Computer skills</h2>
+      <div>
+      <h3>Ms office</h3>
       <p>Excellent proficiency in Word,
           Excel, PowerPoint and Access.</p>
-      <h2>Scripting languages</h2>
+      <h3>Scripting languages</h3>
       <p>Excellent proficiency in
           JavaScript, Python and VBA
           Basic proficiency in PHP and
           Laravel.</p>
-      <h2>Programming languages</h2>
+      <h3>Programming languages</h3>
       <p>Basic proficiency in Java.</p>
-      <h2>Query languages</h2>
+      <h3>Query languages</h3>
       <p>Excellent proficiency in SQL.</p>
-      <h2>Web development</h2>
+      <h3>Web development</h3>
       <p>Excellent proficiency in HTML and
           CSS.</p>
-  </article>
-  <article>
-      <h1>
+          </div>
+  </section>
+  <section>
+      <h2>
           Current studies
-      </h1>
-
-      <h2>Howest Bruges</h2>
-      <h3>AI & Business professional</h3>
+      </h2>
+<div>
+  <h3>AI & Business professional</h3>
+      <h4>Howest Bruges</h4>
       <p>I am currently studying at howest where I have chosen the specialization AI. In this specialization, we learn the basics of machine learning but also the more difficult deeplearning algorithms like LSTM and its variants. If you would like to see some examples, please check my <a href="portfolio.html">portfolio</a>.</p>
-  </article>
+</div>
+  </section>
 
-  <article>
-      <h1>Work experience</h1>
-      <h2>Proximus</h2>
-      <h3>Student job</h3>
+  <section>
+      <h2>Work experience</h2>
+      <div>
+      <h3>Proximus</h3>
+      <h4>Student job</h4>
       <p>During this student job, I had to create
           a game. The purpose of this game
           was to enlighten the employees of
           Proximus about the importance of
           data.
       </p>
-      <h2>Stag lodge stables</h2>
-      <h3>Internship Miniemeninstituut</h3>
+      <h3>Stag lodge stables</h3>
+      <h4>Internship Miniemeninstituut</h4>
       <p>Development of a website for a
           riding school where customers can
           make a reservation and a payment.
@@ -78,14 +84,14 @@
           employees to organize
           reservations, customers, horses and
           arenas.</p>
-      <h2>Bioplanet</h2>
-      <h3>Student job</h3>
+      <h3>Bioplanet</h3>
+      <h4>Student job</h4>
       <p>Stock clerk and cashier.</p>
-  </article>
-</section>
+    </div>
+  </section>
+</article>
 
 </main>
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="assets/js/index.js"></script>
 </body>
 </html>
