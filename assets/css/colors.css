@@ -1,0 +1,11 @@
+:root{
+    --primary: #282c34;
+    --nav: #282c34;
+    --start-gradient: rgba(52, 73, 94, 0.4);
+    --end-gradient: rgba(0, 0, 0, 0.8);
+    --articles: linear-gradient(to bottom right, var(--start-gradient), var(--end-gradient));
+    --shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
+    --headers: white;
+    --subText: #727575;
+    --border-color: rgba(0, 0, 0, 0.5);
+}

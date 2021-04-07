@@ -3,15 +3,16 @@ p{
 }
 
 main{
-    flex-direction: row;
+    flex-direction: column;
+    flex-flow: wrap;
 }
 
 article{
     margin-bottom: 1rem;
 }
 
-@media (max-width: 600px) {
-    main {
-        flex-direction: column;
+@media (max-width: 1840px) {
+    body{
+        overflow: auto;
     }
 }

@@ -2,7 +2,6 @@ body{
     background-image: url(../images/background.jpg);
     background-size: cover;
     font-family: 'Lexend', sans-serif;
-    /*backdrop-filter: blur(5px);*/
     margin: 0;
     position: fixed;
     width: 100%;
@@ -34,7 +33,7 @@ article{
     margin: 0 auto;
     overflow: hidden;
     border-radius: 1rem;
-    box-shadow: 0 0 2px 0 rgb(255 255 255);
+    box-shadow: var(--shadow);
 }
 
 article:before{

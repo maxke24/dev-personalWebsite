@@ -1,28 +1,46 @@
 /*--containers--*/
 body{
-    background: #333;
     font-family: 'Lexend', sans-serif;
-    color: white;
+    color: var(--headers);
+    height: 100%;
+    width: 100%;
+    background-color: var(--primary);
+    overflow: hidden;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 
 main{
     height: 100%;
+    width: 100%;
+    position: fixed;
     display: flex;
     justify-content: center;
+    overflow: auto;
 }
 
 article{
     background: inherit;
     width: 20rem;
-    height: 30rem;
+    height: 45rem;
     position: relative;
-    top: 5rem;
-    margin: 0 2rem;
+    top: 2rem;
+    margin: 0 0.5rem;
     border-radius: 1rem;
     padding: 1rem;
     overflow: auto;
-    background-image: linear-gradient(to bottom right, #34495e, transparent);
-    box-shadow: 1px 1px 2px 0 #292929;
+    background-image: var(--articles);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+a{
+    text-decoration: none;
+    color: var(--subText);
 }
 
 article::-webkit-scrollbar {
@@ -47,11 +65,14 @@ h2{
 }
 
 h3{
-    font-size: 16px;
+    font-size: 22px;
 }
 
-p{
-    color: #727575;
+p, figcaption{
+    color: var(--subText);
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.2;
 }
 
 /*--Navigation--*/
@@ -60,9 +81,12 @@ nav {
     position: relative;
     width: max-content;
     height: 50px;
-    background-color: #34495e;
+    font-weight: bold;
+    background-color: var(--nav);
     border-radius: 8px;
     font-size: 0;
+    z-index: 2;
+    box-shadow: var(--shadow);
 }
 nav a {
     line-height: 50px;
@@ -72,10 +96,10 @@ nav a {
     position: relative;
     z-index: 1;
     text-decoration: none;
-    text-transform: uppercase;
     text-align: center;
-    color: white;
+    color: var(--headers);
     cursor: pointer;
+    width: 7rem;
 }
 nav .animation {
     position: absolute;
@@ -86,41 +110,24 @@ nav .animation {
     border-radius: 8px;
 }
 
-.active{
-    color: white;
-}
-
-a:nth-child(1) {
-    width: 100px;
-}
-a:nth-child(2) {
-    width: 110px;
-}
-a:nth-child(3) {
-    width: 100px;
-}
-a:nth-child(4) {
-    width: 160px;
-}
-
 nav .start-about, a:nth-child(2):hover~.animation {
-    width: 110px;
-    left: 100px;
+    width: 7rem;
+    left: 7rem;
     background-color: #e74c3c;
 }
 nav .start-home, a:nth-child(1):hover~.animation {
-    width: 100px;
+    width: 7rem;
     left: 0;
     background-color: #1abc9c;
 }
 nav .start-portfolio, a:nth-child(3):hover~.animation {
-    width: 100px;
-    left: 210px;
+    width: 7rem;
+    left: 14rem;
     background-color: #3498db;
 }
 nav .start-contact, a:nth-child(4):hover~.animation {
-    width: 160px;
-    left: 310px;
+    width: 7rem;
+    left: 21rem;
     background-color: #9b59b6;
 }
 
@@ -128,7 +135,33 @@ nav .start-contact, a:nth-child(4):hover~.animation {
     display: none;
 }
 
-@media (max-width: 600px) {
+#colorChangeButtons {
+    position: fixed;
+    z-index: 10;
+    bottom: 1rem;
+    overflow: auto;
+    height: 20rem;
+    left: 1rem;
+    border-radius: 1rem;
+    background-color: rgba(52, 73, 94, 0.98);
+    box-shadow: var(--shadow);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#colorChangeButtons a{
+    text-decoration: none;
+    font-size: 36px;
+    height: auto;
+    color: white;
+    display: block;
+    width: 10rem;
+    transition: 0.3s;
+}
+
+@media (max-width: 1050px) {
     nav {
         height: 100%;
         width: 0;
@@ -143,12 +176,13 @@ nav .start-contact, a:nth-child(4):hover~.animation {
         margin-top: 0;
     }
 
-    #overlay {
+    #overlay, #colorChangeButtons {
         position: relative;
         top: 25%;
         width: 100%;
         text-align: center;
         margin-top: 30px;
+        box-shadow: none;
     }
 
     nav a {
@@ -162,7 +196,7 @@ nav .start-contact, a:nth-child(4):hover~.animation {
     }
 
     nav a:hover, nav a:focus {
-        background-color: #34495e;
+        background-color: var(--primary);
     }
 
     nav .closebtn {
@@ -173,7 +207,7 @@ nav .start-contact, a:nth-child(4):hover~.animation {
     }
 
     nav .closebtn.animation{
-        background-color: #34495e;
+        background-color: var(--primary);
     }
 
     #openMenu{
@@ -202,5 +236,8 @@ nav .start-contact, a:nth-child(4):hover~.animation {
     a:nth-child(4) {
         width: 100%;
     }
-
+    nav .start-home,nav .start-about, nav .start-portfolio, nav .start-contact, a:hover~.animation {
+        background-color: transparent;
+    }
+  
 }
