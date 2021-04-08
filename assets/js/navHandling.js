@@ -1,7 +1,7 @@
 "use strict";
 
 const OPTIONS = [
-    ["#282c34", "#282c34", "white", "rgba(52, 73, 94, 0.4)", "rgba(0, 0, 0, 0.8)", "white", "#727575", "rgba(0, 0, 0, 0.5)"],
+    ["#202020ff", "#3F3F3Fff", "#ffffffff", "#202020ff", "#3F3F3Fff", "#ffffffff", "#707070ff", "#FFDf6C"],
             /*body---------nav--------nav text------start--------end-----------text------subtext----border*/
     /*1*/["#C76B98ff", "#46344eff", "#ffffffff", "#D3D3D3ff", "#D3D3D3ff", "#270F36ff", "#270F36ff", "#b76d68"],
     /*2*/["#0063B2FF", "#46344eff", "#ffffffff", "#9CC3D5FF", "#9CC3D5FF", "#F6E8EAff", "#F6E8EAff", "none"],
@@ -13,6 +13,9 @@ const OPTIONS = [
     /*8*/["#202020ff", "#3F3F3Fff", "#ffffffff", "#202020ff", "#3F3F3Fff", "#ffffffff", "#707070ff", "#FFDf6C"],
     /*9*/["#333D79FF", "#FAEBEFFF", "#20202080", "#FAEBEFFF", "#FAEBEFFF", "#ffffffff", "#ffffffff", "#b76d68"],
     /*10*/]
+
+    const DARKMODE = ["#202020ff", "#3F3F3Fff", "#ffffffff", "#202020ff", "#3F3F3Fff", "#ffffffff", "#707070ff", "#FFDf6C"];
+    const LIGHTMODE = ["#89ABE3FF", "#FCF6F5FF", "#20202080", "#FCF6F5FF", "#FCF6F5FF", "#20202080", "#20202080", "#b76d68"];
 
 function openNav() {
     document.querySelector("nav").classList.add("open");
@@ -32,27 +35,37 @@ function loadColors() {
     }
 }
 
-function setStyling(e) {
+function darkMode(){
+    setStyling(DARKMODE);
+}
+
+function lightMode(){
+    setStyling(LIGHTMODE);
+}
+
+function selectStyling(e) {
     e.preventDefault();
     const id = e.target.getAttribute("data-value");
-    let colorOPTIONS = OPTIONS[id];
-    document.documentElement.style.setProperty('--primary', colorOPTIONS[0]);
-    document.documentElement.style.setProperty('--nav', colorOPTIONS[1]);
-    document.documentElement.style.setProperty('--nav-text', colorOPTIONS[2]);
-    document.documentElement.style.setProperty('--start-gradient', colorOPTIONS[3]);
-    document.documentElement.style.setProperty('--end-gradient', colorOPTIONS[4]);
-    document.documentElement.style.setProperty('--headers', colorOPTIONS[5]);
-    document.documentElement.style.setProperty('--subText', colorOPTIONS[6]);
-    document.documentElement.style.setProperty('--border-color', colorOPTIONS[7]);
+    setStyling(OPTIONS[id]);
     if (window.innerWidth < 1050) {
         closeNav();
-
     }
+}
+
+function setStyling(colorList){
+    document.documentElement.style.setProperty('--primary', colorList[0]);
+    document.documentElement.style.setProperty('--nav', colorList[1]);
+    document.documentElement.style.setProperty('--nav-text', colorList[2]);
+    document.documentElement.style.setProperty('--start-gradient', colorList[3]);
+    document.documentElement.style.setProperty('--end-gradient', colorList[4]);
+    document.documentElement.style.setProperty('--headers', colorList[5]);
+    document.documentElement.style.setProperty('--subText', colorList[6]);
+    document.documentElement.style.setProperty('--border-color', colorList[7]);
 }
 
 $("nav").load("nav.html", () => {
     loadColors();
-    document.querySelectorAll("#colorChangeButtons a").forEach(selected => selected.addEventListener("click", setStyling))
+    document.querySelectorAll("#colorChangeButtons a").forEach(selected => selected.addEventListener("click", selectStyling))
     document.querySelector("#openMenu").addEventListener("click", openNav);
     document.querySelector(".closebtn").addEventListener("click", closeNav);
 
