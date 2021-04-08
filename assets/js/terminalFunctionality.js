@@ -108,14 +108,14 @@ function clearOutput() {
 }
 
 function createTag(text, output = false) {
-	let ptag = document.createElement("p");
+	let pTag = document.createElement("p");
 	if (output) {
-		ptag.innerHTML = text;
+		pTag.innerHTML = text;
 	} else {
-		ptag.innerHTML =
+		pTag.innerHTML =
 			`<span class="user">root@dev.jellemax.be</span>:<span class="tilde">~</span>$ ` +
 			text;
 	}
-	ptag.setAttribute("class", "terminal_type");
-	lines.appendChild(ptag);
+	pTag.setAttribute("class", "terminal_type");
+	lines.appendChild(pTag);
 }
