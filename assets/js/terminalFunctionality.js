@@ -1,16 +1,18 @@
-const commands = ["help", "clear", "enable dark theme", "enable light theme", "disable dark theme", "disable light theme"];
+const commands = ["help", "clear", "exit", "enable dark theme", "enable light theme", "disable dark theme", "disable light theme"];
 
 /* --Detecting keypress for opening terminal-- */
-document.addEventListener("keydown", (event) => {
+document.addEventListener("keyup", (event) => {
     const keyname = event.key;
     if (keyname === "²") {
         toggleVisibility();
+        clearOutput();
     }
 });
 
 /* --Toggling the show and hide of the terminal-- */
 function toggleVisibility() {
     terminal.classList.toggle("hidden");
+    inputBox.focus();
 }
 
 /* --closing and clearing the terminal-- */
@@ -34,27 +36,30 @@ function submitCommand() {
 }
 
 function runCommand(command) {
-    if(commands.includes(command)){
-        switch(command){
+    if (commands.includes(command)) {
+        switch (command) {
             case "help":
                 showAllCommands();
                 break;
             case "clear":
                 clearOutput();
                 break;
+            case "exit":
+                closeTerminal();
+                break;
             default:
-                inputBox.value="command recognized";
+                inputBox.value = "command recognized";
                 createTag("command recognized", true);
                 break;
         }
-    }else{
+    } else {
         createTag("Command not recognized, please type help to show available commands", true);
     }
 }
 
-function showAllCommands(){
+function showAllCommands() {
     let list = document.createElement("ul");
-    commands.forEach((command) =>{
+    commands.forEach((command) => {
         let li = document.createElement("li");
         let pTag = document.createElement("p");
         pTag.innerHTML = `- ${command}`;
@@ -64,17 +69,17 @@ function showAllCommands(){
     lines.appendChild(list);
 }
 
-function clearOutput(){
+function clearOutput() {
     lines.innerHTML = "";
     inputBox.value = "";
 
 }
 
-function createTag(text, output = false){
+function createTag(text, output = false) {
     let ptag = document.createElement("p");
-    if(output){
+    if (output) {
         ptag.innerHTML = text;
-    }else{
+    } else {
         ptag.innerHTML = `<span class="user">root@dev.jellemax.be</span>:<span class="tilde">~</span>$ ` + text;
     }
     ptag.setAttribute("class", "terminal_type");
