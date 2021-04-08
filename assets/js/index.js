@@ -1,6 +1,7 @@
 "use strict";
 
 
+
 let options = [
     ["#282c34", "#282c34", "white", "rgba(52, 73, 94, 0.4)", "rgba(0, 0, 0, 0.8)", "white", "#727575", "rgba(0, 0, 0, 0.5)"],
             /*body---------nav--------nav text------start--------end-----------text------subtext----border*/
@@ -51,8 +52,13 @@ function setStyling(e) {
     }
 }
 
-
 $(document).ready(function () {
+    $("#terminal").load("terminal.html", ()=>{
+        $.getScript("assets/js/terminalFunctionality.js");
+        $.getScript("assets/js/terminal.js");
+        $.getScript("assets/js/dragHandler.js");
+
+    });
     $("nav").load("nav.html", () => {
         loadColors();
         document.querySelectorAll("#colorChangeButtons a").forEach(selected => selected.addEventListener("click", setStyling))
