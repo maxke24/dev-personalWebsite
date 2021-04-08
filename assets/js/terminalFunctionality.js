@@ -10,6 +10,11 @@ const commands = [
 	"disable light mode",
 	"load color palette",
 	"close color palette",
+	"background-color",
+	"title-color",
+	"text-color",
+	"nav-background-color",
+	"nav-text-color",
 ];
 
 /* --Detecting keypress for opening terminal-- */
@@ -113,7 +118,7 @@ function createTag(text, output = false) {
 		pTag.innerHTML = text;
 	} else {
 		pTag.innerHTML =
-			`<span class="user">root@dev.jellemax.be</span>:<span class="tilde">~</span>$ ` +
+			`<span class="user">root@dev.jellemax.be</span>:<span class="tilde">~</span>$	` +
 			text;
 	}
 	pTag.setAttribute("class", "terminal_type");

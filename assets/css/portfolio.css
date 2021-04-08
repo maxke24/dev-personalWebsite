@@ -1,100 +1,96 @@
 /* --Containers-- */
 main {
-  flex-flow: wrap;
-  padding-bottom: 1rem;
-  display: grid;
-  justify-content: center;
-  grid-auto-rows: 1fr;
-  padding: 5vh 0;
+	flex-flow: wrap;
+	padding-bottom: 1rem;
+	display: grid;
+	justify-content: center;
+	grid-auto-rows: 1fr;
+	padding: 5vh 0;
 }
 
 article {
-  background: inherit;
-  position: relative;
-  top: 2vh;
-  margin: 2vh 1vw;
-  padding: 1vh 1vw;
-  border-radius: 0.3rem;
-  background-image: var(--articles);
-  box-shadow: var(--shadow);
-  border: 1px solid var(--border-color);
+	background: inherit;
+	position: relative;
+	top: 2vh;
+	margin: 2vh 1vw;
+	padding: 1vh 1vw;
+	border-radius: 0.3rem;
+	background-image: var(--articles);
+	box-shadow: var(--shadow);
 }
 
 /* --Text-- */
-main>article>h2 {
-  font-size: 5vw;
+main > article > h2 {
+	font-size: 5vw;
 }
 
-h2, img, figcaption {
-  margin-bottom: 1vh;
+h2,
+img,
+figcaption {
+	margin-bottom: 1vh;
 }
 
 img {
-  width: 100%;
-  box-shadow: var(--shadow);
+	width: 100%;
+	box-shadow: var(--shadow);
 }
 
 @media screen and (max-width: 400px) {
+	/* --Containers-- */
+	main {
+		grid-template-columns: auto;
+	}
 
-  /* --Containers-- */
-  main {
-    grid-template-columns: auto;
-  }
-
-  /* --Text-- */
-  main>article>h2 {
-    font-size: 4vw;
-  }
+	/* --Text-- */
+	main > article > h2 {
+		font-size: 4vw;
+	}
 }
 
 @media screen and (min-width: 401px) and (max-width: 900px) {
+	/* --Containers-- */
+	main {
+		grid-template-columns: auto auto;
+	}
 
-  /* --Containers-- */
-  main {
-    grid-template-columns: auto auto;
-  }
-
-  /* --Text-- */
-  main>article>h2 {
-    font-size: 3vw;
-  }
+	/* --Text-- */
+	main > article > h2 {
+		font-size: 3vw;
+	}
 }
 
 @media screen and (min-width: 900px) and (max-width: 1440px) {
+	/* --Containers-- */
+	main {
+		grid-template-columns: auto auto auto;
+	}
 
-  /* --Containers-- */
-  main {
-    grid-template-columns: auto auto auto;
-  }
-
-  /* --Text-- */
-  main>article>h2 {
-    font-size: 2vw;
-  }
+	/* --Text-- */
+	main > article > h2 {
+		font-size: 2vw;
+	}
 }
 
 @media screen and (min-width: 1441px) and (max-width: 1800px) {
+	/* --Containers-- */
+	main {
+		grid-template-columns: auto auto auto auto;
+	}
 
-  /* --Containers-- */
-  main {
-    grid-template-columns: auto auto auto auto;
-  }
-
-  /* --Text-- */
-  main>article>h2 {
-    font-size: 2vw;
-  }
+	/* --Text-- */
+	main > article > h2 {
+		font-size: 2vw;
+	}
 }
 
 @media screen and (min-width: 1801px) {
+	/* --Containers-- */
+	main {
+		grid-template-columns: auto auto auto auto auto;
+	}
 
-  /* --Containers-- */
-  main {
-    grid-template-columns: auto auto auto auto auto;
-  }
-
-  /* --Text-- */
-  main>article>h2 {
-    font-size: 1.5vw;
-  }
+	/* --Text-- */
+	main > article > h2 {
+		font-size: 1.5vw;
+	}
 }

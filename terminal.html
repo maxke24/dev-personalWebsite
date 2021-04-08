@@ -1,23 +1,32 @@
 <!-- Terminal Bar -->
 <header id="terminal_bar">
-    <div id="bar_buttons">
-        <button class="bar_button" id="fullscreen">&#9723;</button>
-        <button class="bar_button" id="minimize">&#9472;</button>
-        <button class="bar_button" id="close">&#10005;</button>
-    </div>
-    <p id="bar_user">root@dev.jellemax.be: ~</p>
+	<div id="bar_buttons">
+		<button class="bar_button" id="fullscreen">&#9723;</button>
+		<button class="bar_button" id="minimize">&#9472;</button>
+		<button class="bar_button" id="close">&#10005;</button>
+	</div>
+	<p id="bar_user">root@dev.jellemax.be: ~</p>
 </header>
 <!-- Terminal Body -->
 <section id="terminal_body">
-    <div id="terminal_prompt">
-        <p>Type help to see which commands are available</p>
-        <div id="lines">
-        </div>
-        <form id="type" action="javascript:submitCommand()" spellcheck="false">
-            <label style="display: flex" class="terminal_type">
-                <span class="user">root@dev.jellemax.be</span>:<span class="tilde">~</span>$&nbsp
-                <input id="type_input" style="flex:2" type="text" class="terminal_type" autocomplete="off">
-            </label>
-        </form>
-    </div>
+	<div id="terminal_prompt">
+		<p>Type help to see which commands are available</p>
+		<div id="lines"></div>
+		<form id="type" action="javascript:submitCommand()" spellcheck="false">
+			<label style="display: flex" class="terminal_type">
+				<p>
+					<span class="user">root@dev.jellemax.be</span>:<span class="tilde"
+						>~</span
+					>$&nbsp
+				</p>
+				<input
+					id="type_input"
+					style="flex: 2"
+					type="text"
+					class="terminal_type"
+					autocomplete="off"
+				/>
+			</label>
+		</form>
+	</div>
 </section>
