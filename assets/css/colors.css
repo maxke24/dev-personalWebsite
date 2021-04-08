@@ -1,5 +1,5 @@
 @media (prefers-color-scheme: light) {
-  :root{
+  :root {
     --primary: #89ABE3FF;
     --nav: #FCF6F5FF;
     --nav-text: #20202080;
@@ -10,11 +10,11 @@
     --headers: var(--nav-text);
     --subText: var(--nav-text);
     --border-color: #b76d68
-
   }
 }
+
 @media (prefers-color-scheme: dark) {
-  :root{
+  :root {
     --primary: #202020ff;
     --nav: #3F3F3Fff;
     --nav-text: #ffffffff;
@@ -25,6 +25,5 @@
     --headers: var(--nav-text);
     --subText: #707070ff;
     --border-color: #FFDf6C
-
   }
 }
