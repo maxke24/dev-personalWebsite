@@ -6,7 +6,7 @@
     --start-gradient: #FCF6F5FF;
     --end-gradient: #FCF6F5FF;
     --articles: linear-gradient(to top left, var(--start-gradient), var(--end-gradient));
-    --shadow: 1px 1px 5px 0px;
+    --shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.8);
     --headers: var(--nav-text);
     --subText: var(--nav-text);
     --border-color: #b76d68;
@@ -21,9 +21,9 @@
     --start-gradient: #202020ff;
     --end-gradient: #3F3F3Fff;
     --articles: linear-gradient(to top left, var(--start-gradient), var(--end-gradient));
-    --shadow: 1px 1px 5px 0px;
+    --shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.8);
     --headers: var(--nav-text);
     --subText: #707070ff;
-    --border-color: #FFDf6C
+    --border-color: #FFDf6C;
   }
 }

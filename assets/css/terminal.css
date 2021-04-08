@@ -13,13 +13,17 @@
 
 #terminal {
   display: block;
-  width: 70vw;
-  height: 65vh;
+  width: 60vw;
+  height: 55vh;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
   resize: both;
   overflow: hidden;
   position: fixed;
   z-index: 100;
+  margin: auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #terminal.hidden {
