@@ -9,7 +9,8 @@ body {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none
+  user-select: none;
+  overflow-x: hidden;
 }
 
 section::-webkit-scrollbar {
@@ -39,7 +40,11 @@ a {
   color: var(--subText)
 }
 
-h1, h2, h3, h4, p {
+h1,
+h2,
+h3,
+h4,
+p {
   padding: .5vw
 }
 
@@ -65,11 +70,13 @@ p {
   line-height: 1.2
 }
 
-h1, h2 {
+h1,
+h2 {
   align-self: flex-start
 }
 
-h3, p {
+h3,
+p {
   align-self: flex-end
 }
 
@@ -96,7 +103,8 @@ nav a {
   line-height: 1.5
 }
 
-#openMenu, .closebtn {
+#openMenu,
+.closebtn {
   display: none
 }
 
@@ -144,7 +152,8 @@ nav a {
     width: 100%
   }
 
-  #overlay, #colorChangeButtons {
+  #overlay,
+  #colorChangeButtons {
     position: relative;
     width: 100%;
     text-align: center;
@@ -163,11 +172,13 @@ nav a {
     width: 100%;
   }
 
-  nav a:focus, nav a:hover {
+  nav a:focus,
+  nav a:hover {
     background-color: var(--primary)
   }
 
-  #openMenu, .closebtn {
+  #openMenu,
+  .closebtn {
     font-size: 8vw;
     cursor: pointer;
     position: fixed;
@@ -203,7 +214,8 @@ nav a {
     background-color: transparent
   }
 
-  nav a:focus, nav a:hover {
+  nav a:focus,
+  nav a:hover {
     background-color: transparent
   }
 

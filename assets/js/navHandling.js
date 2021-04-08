@@ -35,6 +35,10 @@ function loadColors() {
     }
 }
 
+function closeColors() {
+    document.querySelector("#colorChangeButtons").innerHTML = "";
+}
+
 function darkMode(){
     setStyling(DARKMODE);
 }
@@ -64,7 +68,6 @@ function setStyling(colorList){
 }
 
 $("nav").load("nav.html", () => {
-    loadColors();
     document.querySelectorAll("#colorChangeButtons a").forEach(selected => selected.addEventListener("click", selectStyling))
     document.querySelector("#openMenu").addEventListener("click", openNav);
     document.querySelector(".closebtn").addEventListener("click", closeNav);

@@ -1,4 +1,4 @@
-const commands = ["help", "clear", "exit", "enable dark mode", "enable light mode", "disable dark mode", "disable light mode"];
+const commands = ["help", "clear", "exit", "enable dark mode", "enable light mode", "disable dark mode", "disable light mode", "load color palette", "close color palette"];
 
 /* --Detecting keypress for opening terminal-- */
 document.addEventListener("keyup", (event) => {
@@ -56,6 +56,12 @@ function runCommand(command) {
             case "enable dark mode":
                 darkMode();
                 createTag("Dark mode is enabled!", true);
+                break;
+            case "load color palette":
+                loadColors();
+                break;
+            case "close color palette":
+                closeColors();
                 break;
             default:
                 inputBox.value = "command recognized";
