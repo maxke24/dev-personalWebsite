@@ -5,7 +5,6 @@ $(document).ready(function () {
 	localforage.getItem("mode").then((response) => {
 		response === "lightMode" ? setStyling(LIGHTMODE) : setStyling(DARKMODE);
 	});
-	// if(localforage)
 
 	$("#terminal").load("terminal.html", () => {
 		$.getScript("assets/js/navHandling.js");
