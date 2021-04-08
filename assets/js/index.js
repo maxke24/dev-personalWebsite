@@ -27,6 +27,7 @@ function closeNav() {
 
 function loadColors() {
     let colornav = document.querySelector("#colorChangeButtons");
+    colornav.innerHTML += `<a href="#" data-value="${0}">Original</a>`;
     for (let i = 1; i < options.length; i++) {
         colornav.innerHTML += `<a href="#" data-value="${i}">option ${i}</a>`;
     }
