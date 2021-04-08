@@ -1,10 +1,15 @@
 "use strict";
 
 $(document).ready(function () {
-	registerServiceWorker();
-	localforage.getItem("mode").then((response) => {
-		response === "lightMode" ? setStyling(LIGHTMODE) : setStyling(DARKMODE);
+	$.getScript("assets/js/localforage.js").then(() => {
+		localforage.getItem("mode").then((response) => {
+			if (response) {
+				console.log("changed light mode based on styling option chosen");
+				response === "lightMode" ? setStyling(LIGHTMODE) : setStyling(DARKMODE);
+			}
+		});
 	});
+	registerServiceWorker();
 
 	$("#terminal").load("terminal.html", () => {
 		$.getScript("assets/js/navHandling.js");

@@ -10,11 +10,12 @@ const commands = [
 	"disable light mode",
 	"load color palette",
 	"close color palette",
-	"background-color",
-	"title-color",
-	"text-color",
-	"nav-background-color",
-	"nav-text-color",
+	"background",
+	"title",
+	"text",
+	"nav-background",
+	"nav-text",
+	"portfolio-card",
 ];
 
 /* --Detecting keypress for opening terminal-- */
@@ -52,6 +53,11 @@ function submitCommand() {
 	inputBox.value = "";
 }
 
+function askColors() {
+	console.log("test");
+	document.querySelector("form").style.display = "none";
+}
+
 function runCommand(command) {
 	if (commands.includes(command)) {
 		switch (command) {
@@ -81,6 +87,9 @@ function runCommand(command) {
 				break;
 			case "close color palette":
 				closeColors();
+				break;
+			case "background":
+				askColors();
 				break;
 			default:
 				inputBox.value = "command recognized";
