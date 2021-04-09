@@ -9,12 +9,16 @@ $(document).ready(function () {
 		$.getScript("assets/js/terminal.js");
 		$.getScript("assets/js/dragHandler.js");
 		$.getScript("assets/js/localforage.js").then(() => {
-			localforage.getItem("mode").then((response) => {
+			localforage.getItem("theme").then((response) => {
 				if (response) {
-					console.log("changed light mode based on styling option chosen");
-					response === "lightMode"
-						? setStyling(LIGHTMODE)
-						: setStyling(DARKMODE);
+					setStyling(response);
+				} else {
+					const userPrefersDark =
+						window.matchMedia &&
+						window.matchMedia("(prefers-color-scheme: dark)").matches;
+					userPrefersDark
+						? localforage.setItem("theme", DARKMODE)
+						: localforage.setItem("theme", LIGHTMODE);
 				}
 			});
 		});

@@ -77,16 +77,30 @@ function selectStyling(e) {
 	}
 }
 
-function setIndividualStyling(property, color) {
-	document.documentElement.style.setProperty(property, color);
+function setIndividualStyling(index, color) {
+	getStyling().then((response) => {
+		let theme = response;
+		console.log(theme);
+		theme[index] = color;
+		setStyling(color);
+	});
 }
 
-function setStyling(colorList) {
-	document.documentElement.style.setProperty("--primary", colorList[0]);
-	document.documentElement.style.setProperty("--secondary", colorList[1]);
-	document.documentElement.style.setProperty("--title", colorList[2]);
-	document.documentElement.style.setProperty("--subtext", colorList[3]);
-	document.documentElement.style.setProperty("--text", colorList[4]);
+function setStyling(theme) {
+	console.log(theme);
+	document.documentElement.style.setProperty("--primary", theme[0]);
+	document.documentElement.style.setProperty("--secondary", theme[1]);
+	document.documentElement.style.setProperty("--title", theme[2]);
+	document.documentElement.style.setProperty("--subtext", theme[3]);
+	document.documentElement.style.setProperty("--text", theme[4]);
+	localforage.setItem("theme", theme);
+}
+
+async function getStyling() {
+	await localforage.getItem("theme", (response) => {
+		console.log(response);
+		return response;
+	});
 }
 
 $("nav").load("nav.html", () => {

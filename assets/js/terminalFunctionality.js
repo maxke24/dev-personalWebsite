@@ -76,20 +76,11 @@ function submitCommand() {
 	inputBox.value = "";
 }
 
-const setColors = (colors, attribute) => {
+const setColors = (colors, id) => {
 	const [tagText, color] = checkColors(colors);
-	setIndividualStyling(attribute, color);
+	setIndividualStyling(id, color);
 	createTag(tagText, true);
 	return color;
-};
-
-const saveColors = (color) => {
-	let customTheme;
-	getItems(["theme", "mode"]).then((response) => {
-		if (response.theme) {
-		}
-		theme = response;
-	});
 };
 
 async function getItems(items) {
@@ -150,7 +141,7 @@ function runCommand(command) {
 		case "elm":
 		case "ddm":
 			lightMode();
-			localforage.setItem("mode", "lightMode");
+			localforage.setItem("theme", LIGHTMODE);
 			tagText = "Light mode is enabled!";
 			break;
 		case "disable light mode":
@@ -158,7 +149,7 @@ function runCommand(command) {
 		case "dlm":
 		case "edm":
 			darkMode();
-			localforage.setItem("mode", "darkMode");
+			localforage.setItem("theme", DARKMODE);
 			tagText = "Dark mode is enabled!";
 			break;
 		case "load color palette":
@@ -172,20 +163,21 @@ function runCommand(command) {
 			tagText = "Color palette closed";
 			break;
 		default:
-			let tag;
+			let id;
 			command.startsWith("bg")
-				? (tag = "--primary")
+				? (id = 0)
 				: command.startsWith("sbg")
-				? (tag = "--secondary")
+				? (id = 1)
 				: command.startsWith("title")
-				? (tag = "--title")
+				? (id = 2)
 				: command.startsWith("subtitle")
-				? (tag = "--subTitle")
+				? (id = 3)
 				: command.startsWith("text")
-				? (tag = "--text")
+				? (id = 4)
 				: (tagText = "Command not recognized");
-			if (tag) {
-				setColors(command.split(" ").slice(1), tag);
+			if (id) {
+				console.log("test");
+				setColors(command.split(" ").slice(1), id);
 			}
 			break;
 	}
