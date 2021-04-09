@@ -81,9 +81,7 @@ function setIndividualStyling(index, color) {
 	localforage.getItem("theme").then((response) => {
 		let theme = [];
 		theme = response;
-		console.log(theme);
 		theme[index] = color;
-		console.log(theme);
 		setStyling(theme);
 	});
 }

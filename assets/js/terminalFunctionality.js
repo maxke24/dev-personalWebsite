@@ -96,7 +96,7 @@ async function getItems(items) {
 function checkColors(colors) {
 	let tagText, color;
 	const hex = colors[0];
-	if (!(colors.length > 3 || colors.length <= 0 || colors.length === 2))
+	if (!(colors.length > 3 || colors.length <= 0 || colors.length === 2)) {
 		if (colors.length === 3) {
 			const [r, g, b] = colors;
 			if (r <= 255 && r >= 0 && g <= 255 && g >= 0 && b <= 255 && b >= 0) {
@@ -109,13 +109,17 @@ function checkColors(colors) {
 			color = hex;
 			tagText = `Color successfully set to ${hex}`;
 		} else if (/^\d+$/.test(hex)) {
-			color = `rgb(${hex}, ${hex}, ${hex})`;
-			tagText = `Color successfully set to rgb(${hex}, ${hex}, ${hex})`;
+			if (hex <= 255 && hex >= 0) {
+				color = `rgb(${hex}, ${hex}, ${hex})`;
+				tagText = `Color successfully set to rgb(${hex}, ${hex}, ${hex})`;
+			} else {
+				tagText = `rgb values can't be higher as 255 or lower as 0`;
+			}
 		} else {
 			tagText =
 				'The color you defined is not correct, please type "background -h" for help';
 		}
-	else {
+	} else {
 		tagText =
 			'The color you defined is not correct, please type "background -h" for help';
 	}
