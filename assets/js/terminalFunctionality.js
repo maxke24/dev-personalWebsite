@@ -78,7 +78,9 @@ function submitCommand() {
 
 const setColors = (colors, id) => {
 	const [tagText, color] = checkColors(colors);
-	setIndividualStyling(id, color);
+	if (color) {
+		setIndividualStyling(id, color);
+	}
 	createTag(tagText, true);
 };
 
@@ -103,6 +105,7 @@ function checkColors(colors) {
 				color = `rgb(${r}, ${g}, ${b})`;
 				tagText = `Color successfully set to rgb(${r}, ${g}, ${b})`;
 			} else {
+				color = null;
 				tagText = `rgb values can't be higher as 255 or lower as 0`;
 			}
 		} else if (hex.startsWith("#")) {
@@ -113,13 +116,16 @@ function checkColors(colors) {
 				color = `rgb(${hex}, ${hex}, ${hex})`;
 				tagText = `Color successfully set to rgb(${hex}, ${hex}, ${hex})`;
 			} else {
+				color = null;
 				tagText = `rgb values can't be higher as 255 or lower as 0`;
 			}
 		} else {
+			color = null;
 			tagText =
 				'The color you defined is not correct, please type "background -h" for help';
 		}
 	} else {
+		color = null;
 		tagText =
 			'The color you defined is not correct, please type "background -h" for help';
 	}
