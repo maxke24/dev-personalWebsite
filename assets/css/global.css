@@ -48,6 +48,7 @@ main article:first-child section > * {
 main > article:first-child {
 	justify-content: center;
 	box-shadow: var(--shadow);
+	z-index: 1;
 }
 article {
 	display: flex;

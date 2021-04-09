@@ -89,7 +89,6 @@ const saveColors = (color) => {
 		if (response.theme) {
 		}
 		theme = response;
-		console.log(theme);
 	});
 };
 
