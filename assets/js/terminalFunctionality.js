@@ -9,11 +9,11 @@ const commands = [
 	"disable light mode (dlm)",
 	"load color palette (lp)",
 	"close color palette (cp)",
-	"primary",
-	"secondary",
+	"bg (change main background)",
+	"sbg (change secondary background)",
 	"title",
+	"subtitle",
 	"text",
-	"nav-text",
 ];
 
 let latestCommand = [];
@@ -24,7 +24,6 @@ document.addEventListener("keyup", (event) => {
 	const keyName = event.key;
 	if (keyName === "²") {
 		toggleVisibility();
-		clearOutput();
 	}
 });
 
@@ -49,7 +48,6 @@ document.addEventListener("keydown", (event) => {
 			}
 		}
 	}
-	console.log(commandIndex);
 });
 
 /* --Toggling the show and hide of the terminal-- */
@@ -82,13 +80,14 @@ const setColors = (colors, attribute) => {
 	const [tagText, color] = checkColors(colors);
 	setIndividualStyling(attribute, color);
 	createTag(tagText, true);
-	saveColors();
+	return color;
 };
 
-const saveColors = () => {
-	let theme = {};
-
+const saveColors = (color) => {
+	let customTheme;
 	getItems(["theme", "mode"]).then((response) => {
+		if (response.theme) {
+		}
 		theme = response;
 		console.log(theme);
 	});
@@ -135,6 +134,7 @@ function checkColors(colors) {
 }
 
 function runCommand(command) {
+	let tagText;
 	switch (command) {
 		case "help":
 			showAllCommands();
@@ -152,7 +152,7 @@ function runCommand(command) {
 		case "ddm":
 			lightMode();
 			localforage.setItem("mode", "lightMode");
-			createTag("Light mode is enabled!", true);
+			tagText = "Light mode is enabled!";
 			break;
 		case "disable light mode":
 		case "enable dark mode":
@@ -160,33 +160,40 @@ function runCommand(command) {
 		case "edm":
 			darkMode();
 			localforage.setItem("mode", "darkMode");
-			createTag("Dark mode is enabled!", true);
+			tagText = "Dark mode is enabled!";
 			break;
 		case "load color palette":
 		case "lp":
 			loadColors();
-			createTag("Color palette opened", true);
+			tagText = "Color palette opened";
 			break;
 		case "close color palette":
 		case "cp":
 			closeColors();
-			createTag("Color palette closed", true);
+			tagText = "Color palette closed";
 			break;
 		default:
-			command.startsWith("primary")
-				? setColors(command.split(" ").slice(1), "--primary")
-				: !command.startsWith("secondary")
-				? command.startsWith("title")
-					? setColors(command.split(" ").slice(1), "--headers")
-					: command.startsWith("text")
-					? setColors(command.split(" ").slice(1), "--subText")
-					: command.startsWith("nav-text")
-					? setColors(command.split(" ").slice(1), "--nav-text")
-					: createTag("command not recognized", true)
-				: setColors(command.split(" ").slice(1), "--nav");
+			let tag;
+			command.startsWith("bg")
+				? (tag = "--primary")
+				: command.startsWith("sbg")
+				? (tag = "--secondary")
+				: command.startsWith("title")
+				? (tag = "--title")
+				: command.startsWith("subtitle")
+				? (tag = "--subTitle")
+				: command.startsWith("text")
+				? (tag = "--text")
+				: (tagText = "Command not recognized");
+			if (tag) {
+				setColors(command.split(" ").slice(1), tag);
+			}
 			break;
 	}
 
+	if (tagText) {
+		createTag(tagText, true);
+	}
 	latestCommand.push(command);
 	commandIndex = latestCommand.length - 1;
 	inputBox.scrollIntoView();

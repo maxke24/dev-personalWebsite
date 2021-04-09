@@ -1,6 +1,6 @@
 body {
 	font-family: Lexend, sans-serif;
-	color: var(--headers);
+	color: var(--title);
 	height: 100%;
 	width: 100%;
 	background-color: var(--primary);
@@ -36,7 +36,6 @@ section {
 }
 #about section {
 	background-color: var(--secondary);
-	color: var(--secondary-text);
 	flex-direction: row;
 	align-content: center;
 	align-items: center;
@@ -62,7 +61,7 @@ section > * {
 	align-self: auto;
 }
 #about section > :nth-child(even) {
-	border-left: 1px solid #556784;
+	border-left: 1px solid var(--subTitle);
 	margin: 2vw auto;
 }
 main > article {
@@ -86,11 +85,7 @@ article:not(#about) h2 {
 }
 #about h2,
 #about h3 {
-	color: #556784;
 	align-self: center;
-}
-h4 {
-	color: #89abe3;
 }
 a {
 	text-decoration: none;
@@ -102,24 +97,28 @@ h3,
 h4,
 p {
 	padding: 0.5vw;
-	color: var(--subTitle);
 }
 h1 {
 	font-size: 5vw;
+	color: var(--title);
 }
 h2 {
 	font-size: 2.4vw;
+	color: var(--subTitle);
 }
 h3 {
 	font-size: 2.3vw;
+	color: var(--subTitle);
 }
 h4 {
 	font-size: 2.2vw;
+	color: var(--subTitle);
 }
 p {
 	font-size: 1vw;
 	font-weight: 700;
 	line-height: 1.2;
+	color: var(--text);
 }
 h1,
 h2 {
@@ -187,7 +186,6 @@ nav a {
 		padding: 0;
 		top: 0;
 		left: 0;
-		background-color: #000;
 		background-color: rgba(52, 73, 94, 0.98);
 		overflow-x: hidden;
 		transition: 0.5s;
