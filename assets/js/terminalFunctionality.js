@@ -53,22 +53,22 @@ document.addEventListener("keydown", (event) => {
 });
 
 /* --Toggling the show and hide of the terminal-- */
-function toggleVisibility() {
+const toggleVisibility = () => {
 	terminal.classList.toggle("hidden");
 	inputBox.focus();
-}
+};
 
 /* --closing and clearing the terminal-- */
-function closeTerminal() {
+const closeTerminal = () => {
 	clearOutput();
 	toggleVisibility();
-}
+};
 
 /* --Let user put terminal fullscreen-- */
-function fullScreen() {
+const fullScreen = () => {
 	terminal.style.width = "100%";
 	terminal.style.height = "100%";
-}
+};
 
 /* --Making typed input show as a stacktrace-- */
 function submitCommand() {
@@ -82,7 +82,28 @@ const setColors = (colors, attribute) => {
 	const [tagText, color] = checkColors(colors);
 	setIndividualStyling(attribute, color);
 	createTag(tagText, true);
+	saveColors();
 };
+
+const saveColors = () => {
+	let theme = {};
+
+	getItems(["theme", "mode"]).then((response) => {
+		theme = response;
+		console.log(theme);
+	});
+};
+
+async function getItems(items) {
+	let itemList = {};
+	await items.forEach((item) => {
+		localforage.getItem(item).then((response) => {
+			itemList[item] = response;
+		});
+	});
+
+	return itemList;
+}
 
 function checkColors(colors) {
 	let tagText, color;
@@ -154,15 +175,15 @@ function runCommand(command) {
 		default:
 			command.startsWith("primary")
 				? setColors(command.split(" ").slice(1), "--primary")
-				: command.startsWith("secondary")
-				? setColors(command.split(" ").slice(1), "--nav")
-				: command.startsWith("title")
-				? setColors(command.split(" ").slice(1), "--headers")
-				: command.startsWith("text")
-				? setColors(command.split(" ").slice(1), "--subText")
-				: command.startsWith("nav-text")
-				? setColors(command.split(" ").slice(1), "--nav-text")
-				: createTag("command not recognized", true);
+				: !command.startsWith("secondary")
+				? command.startsWith("title")
+					? setColors(command.split(" ").slice(1), "--headers")
+					: command.startsWith("text")
+					? setColors(command.split(" ").slice(1), "--subText")
+					: command.startsWith("nav-text")
+					? setColors(command.split(" ").slice(1), "--nav-text")
+					: createTag("command not recognized", true)
+				: setColors(command.split(" ").slice(1), "--nav");
 			break;
 	}
 
