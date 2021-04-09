@@ -80,7 +80,6 @@ const setColors = (colors, id) => {
 	const [tagText, color] = checkColors(colors);
 	setIndividualStyling(id, color);
 	createTag(tagText, true);
-	return color;
 };
 
 async function getItems(items) {
@@ -175,9 +174,9 @@ function runCommand(command) {
 				: command.startsWith("text")
 				? (id = 4)
 				: (tagText = "Command not recognized");
-			if (id) {
-				console.log("test");
-				setColors(command.split(" ").slice(1), id);
+			if (id || id === 0) {
+				let possibleColors = command.split(" ").slice(1);
+				setColors(possibleColors, id);
 			}
 			break;
 	}
