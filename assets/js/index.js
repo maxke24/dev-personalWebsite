@@ -1,14 +1,6 @@
 "use strict";
 
 $(document).ready(function () {
-	$.getScript("assets/js/localforage.js").then(() => {
-		localforage.getItem("mode").then((response) => {
-			if (response) {
-				console.log("changed light mode based on styling option chosen");
-				response === "lightMode" ? setStyling(LIGHTMODE) : setStyling(DARKMODE);
-			}
-		});
-	});
 	registerServiceWorker();
 
 	$("#terminal").load("terminal.html", () => {
@@ -16,6 +8,16 @@ $(document).ready(function () {
 		$.getScript("assets/js/terminalFunctionality.js");
 		$.getScript("assets/js/terminal.js");
 		$.getScript("assets/js/dragHandler.js");
+		$.getScript("assets/js/localforage.js").then(() => {
+			localforage.getItem("mode").then((response) => {
+				if (response) {
+					console.log("changed light mode based on styling option chosen");
+					response === "lightMode"
+						? setStyling(LIGHTMODE)
+						: setStyling(DARKMODE);
+				}
+			});
+		});
 	});
 });
 

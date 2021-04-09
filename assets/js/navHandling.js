@@ -165,6 +165,10 @@ function selectStyling(e) {
 	}
 }
 
+function setIndividualStyling(property, color) {
+	document.documentElement.style.setProperty(property, color);
+}
+
 function setStyling(colorList) {
 	document.documentElement.style.setProperty("--primary", colorList[0]);
 	document.documentElement.style.setProperty("--nav", colorList[1]);
@@ -173,7 +177,6 @@ function setStyling(colorList) {
 	document.documentElement.style.setProperty("--end-gradient", colorList[4]);
 	document.documentElement.style.setProperty("--headers", colorList[5]);
 	document.documentElement.style.setProperty("--subText", colorList[6]);
-	document.documentElement.style.setProperty("--border-color", colorList[7]);
 }
 
 $("nav").load("nav.html", () => {

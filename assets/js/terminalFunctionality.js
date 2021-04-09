@@ -1,30 +1,55 @@
 "use strict";
-
 const commands = [
 	"help",
-	"clear",
+	"clear (cls)",
 	"exit",
-	"enable dark mode",
-	"enable light mode",
-	"disable dark mode",
-	"disable light mode",
-	"load color palette",
-	"close color palette",
-	"background",
+	"enable dark mode (edm)",
+	"enable light mode (elm)",
+	"disable dark mode (ddm)",
+	"disable light mode (dlm)",
+	"load color palette (lp)",
+	"close color palette (cp)",
+	"primary",
+	"secondary",
 	"title",
 	"text",
-	"nav-background",
-	"nav-text",
-	"portfolio-card",
+	"nav-text" /* 
+	"portfolio-card", */,
 ];
 
+let latestCommand = [];
+let commandIndex = latestCommand.length;
 /* --Detecting keypress for opening terminal-- */
 document.addEventListener("keyup", (event) => {
+	event.preventDefault();
 	const keyName = event.key;
 	if (keyName === "²") {
 		toggleVisibility();
 		clearOutput();
 	}
+});
+
+document.addEventListener("keydown", (event) => {
+	const keyName = event.key;
+	if (!terminal.classList.contains("hidden")) {
+		if (commandIndex >= 0 && latestCommand.length > 0) {
+			if (keyName == "ArrowUp") {
+				event.preventDefault();
+				inputBox.value = latestCommand[commandIndex];
+				if (commandIndex > 0) {
+					commandIndex--;
+				}
+			}
+			if (keyName == "ArrowDown") {
+				event.preventDefault();
+				inputBox.value = latestCommand[commandIndex];
+				if (commandIndex < latestCommand.length - 1) {
+					commandIndex++;
+				}
+			}
+		}
+	}
+	console.log(commandIndex);
 });
 
 /* --Toggling the show and hide of the terminal-- */
@@ -53,55 +78,101 @@ function submitCommand() {
 	inputBox.value = "";
 }
 
-function askColors() {
-	console.log("test");
-	document.querySelector("form").style.display = "none";
+const setColors = (colors, attribute) => {
+	const [tagText, color] = checkColors(colors);
+	setIndividualStyling(attribute, color);
+	createTag(tagText, true);
+};
+
+function checkColors(colors) {
+	let tagText, color;
+	const hex = colors[0];
+	if (!(colors.length > 3 || colors.length <= 0 || colors.length === 2))
+		if (colors.length === 3) {
+			const [r, g, b] = colors;
+			if (r <= 255 && r >= 0 && g <= 255 && g >= 0 && b <= 255 && b >= 0) {
+				color = `rgb(${r}, ${g}, ${b})`;
+				tagText = `Color successfully set to rgb(${r}, ${g}, ${b})`;
+			} else {
+				tagText = `rgb values can't be higher as 255 or lower as 0`;
+			}
+		} else if (hex.startsWith("#")) {
+			color = hex;
+			tagText = `Color successfully set to ${hex}`;
+		} else if (/^\d+$/.test(hex)) {
+			color = `rgb(${hex}, ${hex}, ${hex})`;
+			tagText = `Color successfully set to rgb(${hex}, ${hex}, ${hex})`;
+		} else {
+			tagText =
+				'The color you defined is not correct, please type "background -h" for help';
+		}
+	else {
+		tagText =
+			'The color you defined is not correct, please type "background -h" for help';
+	}
+	return [tagText, color];
 }
 
 function runCommand(command) {
-	if (commands.includes(command)) {
-		switch (command) {
-			case "help":
-				showAllCommands();
-				break;
-			case "clear":
-				clearOutput();
-				break;
-			case "exit":
-				closeTerminal();
-				break;
-			case "enable light mode":
-			case "disable dark mode":
-				lightMode();
-				localforage.setItem("mode", "lightMode");
-				createTag("Light mode is enabled!", true);
-				break;
-			case "disable light mode":
-			case "enable dark mode":
-				darkMode();
-				localforage.setItem("mode", "darkMode");
-				createTag("Dark mode is enabled!", true);
-				break;
-			case "load color palette":
-				loadColors();
-				break;
-			case "close color palette":
-				closeColors();
-				break;
-			case "background":
-				askColors();
-				break;
-			default:
-				inputBox.value = "command recognized";
-				createTag("command recognized", true);
-				break;
-		}
-	} else {
-		createTag(
-			"Command not recognized, please type help to show available commands",
-			true
-		);
+	switch (command) {
+		case "help":
+			showAllCommands();
+			break;
+		case "clear":
+		case "cls":
+			clearOutput();
+			break;
+		case "exit":
+			closeTerminal();
+			break;
+		case "enable light mode":
+		case "disable dark mode":
+		case "elm":
+		case "ddm":
+			lightMode();
+			localforage.setItem("mode", "lightMode");
+			createTag("Light mode is enabled!", true);
+			break;
+		case "disable light mode":
+		case "enable dark mode":
+		case "dlm":
+		case "edm":
+			darkMode();
+			localforage.setItem("mode", "darkMode");
+			createTag("Dark mode is enabled!", true);
+			break;
+		case "load color palette":
+		case "lp":
+			loadColors();
+			createTag("Color palette opened", true);
+			break;
+		case "close color palette":
+		case "cp":
+			closeColors();
+			createTag("Color palette closed", true);
+			break;
+		default:
+			command.startsWith("primary")
+				? setColors(command.split(" ").slice(1), "--primary")
+				: command.startsWith("secondary")
+				? setColors(command.split(" ").slice(1), "--nav")
+				: command.startsWith("title")
+				? setColors(command.split(" ").slice(1), "--headers")
+				: command.startsWith("text")
+				? setColors(command.split(" ").slice(1), "--subText")
+				: command.startsWith("nav-text")
+				? setColors(command.split(" ").slice(1), "--nav-text")
+				: /* 				: command.startsWith("portfolio-card")
+				? setColors(command.split(" ").slice(1), [
+						"--start-gradient",
+						"--end-gradient",
+				  ]) */
+				  createTag("command not recognized", true);
+			break;
 	}
+
+	latestCommand.push(command);
+	commandIndex = latestCommand.length - 1;
 }
 
 function showAllCommands() {
