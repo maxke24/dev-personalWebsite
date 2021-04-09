@@ -13,8 +13,7 @@ const commands = [
 	"secondary",
 	"title",
 	"text",
-	"nav-text" /* 
-	"portfolio-card", */,
+	"nav-text",
 ];
 
 let latestCommand = [];
@@ -30,6 +29,7 @@ document.addEventListener("keyup", (event) => {
 });
 
 document.addEventListener("keydown", (event) => {
+	inputBox.scrollIntoView();
 	const keyName = event.key;
 	if (!terminal.classList.contains("hidden")) {
 		if (commandIndex >= 0 && latestCommand.length > 0) {
@@ -162,17 +162,13 @@ function runCommand(command) {
 				? setColors(command.split(" ").slice(1), "--subText")
 				: command.startsWith("nav-text")
 				? setColors(command.split(" ").slice(1), "--nav-text")
-				: /* 				: command.startsWith("portfolio-card")
-				? setColors(command.split(" ").slice(1), [
-						"--start-gradient",
-						"--end-gradient",
-				  ]) */
-				  createTag("command not recognized", true);
+				: createTag("command not recognized", true);
 			break;
 	}
 
 	latestCommand.push(command);
 	commandIndex = latestCommand.length - 1;
+	inputBox.scrollIntoView();
 }
 
 function showAllCommands() {
@@ -203,4 +199,8 @@ function createTag(text, output = false) {
 	}
 	pTag.setAttribute("class", "terminal_type");
 	lines.appendChild(pTag);
+}
+
+function scrollToBottom() {
+	inputBox.scrollIntoView();
 }
