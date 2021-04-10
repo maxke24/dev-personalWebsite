@@ -121,13 +121,11 @@ function checkColors(colors) {
 			}
 		} else {
 			color = null;
-			tagText =
-				'The color you defined is not correct, please type "background -h" for help';
+			tagText = 'The color you defined is not correct, please type "background -h" for help';
 		}
 	} else {
 		color = null;
-		tagText =
-			'The color you defined is not correct, please type "background -h" for help';
+		tagText = 'The color you defined is not correct, please type "background -h" for help';
 	}
 	return [tagText, color];
 }
@@ -185,9 +183,11 @@ function runCommand(command) {
 			tagText = "Color palette closed";
 			break;
 		case "bg -h":
+		case "background -h":
 			colorHelp("background");
 			break;
 		case "sbg -h":
+		case "secondary background -h":
 			colorHelp("secondary background");
 			break;
 		case "title -h":
@@ -249,9 +249,7 @@ function createTag(text, output = false) {
 	if (output) {
 		pTag.innerHTML = text;
 	} else {
-		pTag.innerHTML =
-			`<span class="user">root@dev.jellemax.be</span>:<span class="tilde">~</span>$	` +
-			text;
+		pTag.innerHTML = `<span class="user">root@dev.jellemax.be</span>:<span class="tilde">~</span>$	` + text;
 	}
 	pTag.setAttribute("class", "terminal_type");
 	lines.appendChild(pTag);
