@@ -4,5 +4,7 @@
 	"singleQuote": false,
 	"semi": true,
 	"bracketSpacing": false,
+	"printWidth": 120,
+	"proseWrap": "never",
 	"endOfLine": "lf"
 }

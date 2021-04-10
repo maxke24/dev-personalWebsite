@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../assets/css/finance.css" />
+		<title>Finance calculator by Michael Heymans</title>
+	</head>
+	<body>
+		<form>
+			<fieldset>
+				<legend>Inkomsten</legend>
+				<section>
+					<h1>salaris</h1>
+					<p>Jaarlijkse salaris van u en uw partner.</p>
+					<label for="salaris_man">Salaris man: </label>
+					<input type="number" id="salaris_man" />
+					<label for="salaris_vrouw">Salaris vrouw: </label>
+					<input type="number" id="salaris_vrouw" />
+				</section>
+				<section>
+					<h1>Spaarrekening</h1>
+					<p>Jaarlijkse salaris van u en uw partner.</p>
+					<label for="spaarrekening_man">Spaarrekening man: </label>
+					<input type="number" id="spaarrekening_man" />
+					<label for="spaarrekening_vrouw">Spaarrekening vrouw: </label>
+					<input type="number" id="spaarrekening_vrouw" />
+					<label for="spaarrekening_gemeenschappelijk"
+						>Gemeenschappelijke spaarrekening</label
+					>
+					<input type="number" id="spaarrekening_gemeenschappelijk" />
+				</section>
+			</fieldset>
+			<fieldset>
+				<legend>Kosten</legend>
+				<section>
+					<h1>Aankoop woning</h1>
+					<label for="aankoopprijs">Aankoopprijs: </label>
+					<input type="number" id="aankoopprijs" />
+					<label for="registratierechten"
+						>registratierechten + hypotheek (notaris)</label
+					>
+					<input type="number" id="registratierechten" />
+				</section>
+				<section>
+					<h1>Renovatie woning</h1>
+					<label label="dak">Dak + isolatie: </label>
+					<input type="number" id="dak" />
+					<label for="ramen">Ramen, deuren en garagepoort: </label>
+					<input type="number" id="ramen" />
+					<label for="elektriciteit">Elektriciteit: </label>
+					<input type="number" id="elektriciteit" />
+					<h2>Algemene loodgieterij</h2>
+					<label for="radiatoren">Radiatoren: </label>
+					<input type="number" id="radiatoren" />
+					<label for="ketel">Ketel: </label>
+					<input type="number" id="ketel" />
+					<label for="boiler">Warm water boiler/ketel: </label>
+					<input type="number" id="boiler" />
+					<label id="waterverzachter">Waterverzachter: </label>
+					<input type="number" id="waterverzachter" />
+					<label id="rioleringswerken">Rioleringswerken: </label>
+					<input type="number" id="rioleringswerken" />
+					<p>Afwerking woonkamer</p>
+					<label id="vloer_woonkamer">Vloer: </label>
+					<input type="number" id="vloer_woonkamer" />
+					<label id="verf_woonkamer">Verf: </label>
+					<input type="number" id="verf_woonkamer" />
+					<label id="meubels_woonkamer">Meubels: </label>
+					<input type="number" id="meubels_woonkamer" />
+					<p>Afwerking eetkamer</p>
+					<label id="vloer_eetkamer">Vloer: </label>
+					<input type="number" id="vloer_eetkamer" />
+					<label id="verf_eetkamer">Verf: </label>
+					<input type="number" id="verf_eetkamer" />
+					<label id="meubels_eetkamer">Meubels: </label>
+					<input type="number" id="meubels_eetkamer" />
+					<p>Afwerking keuken</p>
+					<label id="vloer_keuken">Vloer: </label>
+					<input type="number" id="vloer_keuken" />
+					<label id="verf_keuken">Verf: </label>
+					<input type="number" id="verf_keuken" />
+					<label id="meubels_keuken">Meubels: </label>
+					<input type="number" id="meubels_keuken" />
+					<p>Afwerking badkamer en toilet</p>
+					<label id="loodgieterij">Loodgieterij: </label>
+					<input type="number" id="loodgieterij" />
+					<label id="vloer_badkamer">Vloer: </label>
+					<input type="number" id="vloer_badkamer" />
+					<label id="verf_badkamer">Verf: </label>
+					<input type="number" id="verf_badkamer" />
+					<label id="verf_badkamer">Meubels: </label>
+					<input type="number" id="verf_badkamer" />
+					<p>Afwerking slaapkamer 1</p>
+					<label id="vloer_slaapkamer">Vloer: </label>
+					<input type="number" id="vloer_slaapkamer" />
+					<label id="verf_slaapkamer">Verf: </label>
+					<input type="number" id="verf_slaapkamer" />
+					<label id="meubels_slaapkamer">Meubels: </label>
+					<input type="number" id="meubels_slaapkamer" />
+					<p>Afwerking slaapkamer 2</p>
+					<label id="vloer_slaapkamer">Vloer: </label>
+					<input type="number" id="vloer_slaapkamer" />
+					<label id="verf_slaapkamer">Verf: </label>
+					<input type="number" id="verf_slaapkamer" />
+					<label id="meubels_slaapkamer">Meubels: </label>
+					<input type="number" id="meubels_slaapkamer" />
+					<p>Afwerking slaapkamer 3</p>
+					<label id="vloer_slaapkamer">Vloer: </label>
+					<input type="number" id="vloer_slaapkamer" />
+					<label id="verf_slaapkamer">Verf: </label>
+					<input type="number" id="verf_slaapkamer" />
+					<label id="meubels_slaapkamer">Meubels: </label>
+					<input type="number" id="meubels_slaapkamer" />
+					<label id="overige">Afwerking overige: </label>
+					<input type="number" id="overige" />
+				</section>
+				<section>
+					<h1>Terugkomende lasten</h1>
+					<label id="grondlasten">Grondlasten : </label>
+					<input type="number" id="grondlasten" />
+					<label id="rijtaksen">Rijtaksen : </label>
+					<input type="number" id="rijtaksen" />
+					<label id="onderhoud_waterverzachter"
+						>Onderhoud waterverzachter :
+					</label>
+					<input type="number" id="onderhoud_waterverzachter" />
+					<label id="onderhoud_verwarmingsketel"
+						>Onderhoud verwarmingsketel :
+					</label>
+					<input type="number" id="onderhoud_verwarmingsketel" />
+					<label id="onderhoud_auto">Onderhoud auto (incl. keuring): </label>
+					<input type="number" id="onderhoud_auto" />
+					<label id="andere_leningen">Andere leningen: </label>
+					<input type="number" id="andere_leningen" />
+				</section>
+				<section>
+					<h1>Verzekeringen</h1>
+					<label id="autoverzekering">Autoverzekering: </label>
+					<input type="number" id="autoverzekering" />
+					<label id="brandverzekering">Brandverzekering: </label>
+					<input type="number" id="brandverzekering" />
+					<label id="schuldsaldo_vrouw">Schuldsaldo verzekering Vrouw: </label>
+					<input type="number" id="schuldsaldo_vrouw" />
+					<label id="schuldsaldo_man">Schuldsaldo verzekering Man: </label>
+					<input type="number" id="schuldsaldo_man" />
+					<label id="mutualiteit">Mutualiteit: </label>
+					<input type="number" id="mutualiteit" />
+					<label id="familiale">Familiale verzekering: </label>
+					<input type="number" id="familiale" />
+				</section>
+				<section>
+					<h1>Nutsvoorzieningen</h1>
+					<label id="water">Water : </label>
+					<input type="number" id="water" />
+					<label id="gas">Gas : </label>
+					<input type="number" id="gas" />
+					<label id="elektriciteit">Elektriciteit : </label>
+					<input type="number" id="elektriciteit" />
+					<label id="tv">TV + Telefoon + Internet : </label>
+					<input type="number" id="tv" />
+					<label id="gsm">GSM-abonnement: </label>
+					<input type="number" id="gsm" />
+				</section>
+				<section>
+					<h1>Leef en plezier</h1>
+					<p>Voeding</p>
+					<label id="winkel">Grotenwarenhuis: </label>
+					<input type="number" id="winkel" />
+					<label id="resto">Restaurant & bar: </label>
+					<input type="number" id="resto" />
+					<label id="vervoer">Vervoer (incl. brandstof): </label>
+					<input type="number" id="vervoer" />
+					<label id="kleding">Kleding: </label>
+					<input type="number" id="kleding" />
+					<label id="reizen">Reizen: </label>
+					<input type="number" id="reizen" />
+					<label id="overige">Overige uitgaves: </label>
+					<input type="number" id="overige" />
+				</section>
+			</fieldset>
+		</form>
+	</body>
+</html>
