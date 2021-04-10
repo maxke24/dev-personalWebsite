@@ -132,6 +132,19 @@ function checkColors(colors) {
 	return [tagText, color];
 }
 
+function colorHelp(command) {
+	let text = `To change the color of ${command}, please use one of the following options:
+	</br>
+	 0 0 0 - 255 255 255
+	 </br>
+	 0 - 255
+	 </br>
+	 #000 - #fff
+	 </br>
+	 #000000 - #ffffff`;
+	createTag(text, true);
+}
+
 function runCommand(command) {
 	let tagText;
 	switch (command) {
@@ -170,6 +183,21 @@ function runCommand(command) {
 		case "cp":
 			closeColors();
 			tagText = "Color palette closed";
+			break;
+		case "bg -h":
+			colorHelp("background");
+			break;
+		case "sbg -h":
+			colorHelp("secondary background");
+			break;
+		case "title -h":
+			colorHelp("title");
+			break;
+		case "subtitle -h":
+			colorHelp("subtitle");
+			break;
+		case "text -h":
+			colorHelp("text");
 			break;
 		default:
 			let id;

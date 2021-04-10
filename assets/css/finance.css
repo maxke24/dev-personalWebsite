@@ -8,3 +8,39 @@ form fieldset * {
 	margin-bottom: 0.1vw;
 	line-height: 1.5;
 }
+
+.collapsible {
+	background-color: #eee;
+	color: #444;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+}
+
+.active,
+.collapsible:hover {
+	background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+	padding: 0 18px;
+	display: none;
+	overflow: hidden;
+	background-color: #f1f1f1;
+}
+
+form fieldset * {
+	margin: 0;
+	text-align: start;
+	font-size: 1.4vw;
+}
+
+article section#overview * {
+	margin: 0;
+	text-align: start;
+	font-size: 1.4vw;
+}
