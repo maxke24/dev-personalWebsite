@@ -1,30 +1,41 @@
 "use strict";
-let vehicle;
+let ants = [];
 let target;
-let obstacles = [];
+let foods = [];
 let path;
 
 function setup() {
-    createCanvas(window.innerWidth, window.innerHeight);
-    vehicle = new Vehicle(50, 200);
-    vehicle.vel.set(3, -0.5);
-    path = new Path();
-    obstacles[0] = new Obstacle(300, 200, 50)
+	createCanvas(window.innerWidth, window.innerHeight); /* 
+	ant = new Ant(50, 200);
+	ant.vel.set(3, -0.5); */
+	path = new Path();
+	for (let i = 0; i < 50; i++) {
+		foods.push(new Food());
+	}
+
+	for (let i = 0; i < 200; i++) {
+		ants.push(new Ant(50, 200, i));
+	}
 }
 
-function mouseClicked(){
-    path.addRoundPoint(mouseX, mouseY);
+function mouseClicked() {
+	path.addRoundPoint(mouseX, mouseY);
 }
 
 function draw() {
-    background(0);
-    if(path.points.length > 3){
-        path.display();
-        // vehicle.arrive(createVector(mouseX, mouseY));
-        vehicle.edges();
-        vehicle.follow(path)
-        vehicle.update();
-        vehicle.show();
-    }
+	background(0);
+	if (path.points.length > 3) {
+		path.display();
+		ant.follow(path);
+	}
 
+	foods.forEach((food) => {
+		food.show();
+	});
+	ants.forEach((ant) => {
+		ant.seek();
+		ant.edges();
+		ant.update();
+		ant.show();
+	});
 }
