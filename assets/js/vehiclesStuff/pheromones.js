@@ -1,7 +1,7 @@
 class Pheromone extends p5.Vector {
 	constructor(x, y, foodPheromone = "false") {
 		super(x, y);
-		this.lifespan = 1000;
+		this.lifespan = 200;
 		this.foodPheromone = foodPheromone;
 	}
 

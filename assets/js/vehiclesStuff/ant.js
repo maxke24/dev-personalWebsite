@@ -1,7 +1,7 @@
 "use strict";
 
 let foodSearch = {};
-let returnTrail = [];
+let returnTrail = {};
 
 class Ant extends p5.Vector {
 	constructor(x, y, id) {
@@ -9,10 +9,10 @@ class Ant extends p5.Vector {
 		/* this = createVector(x, y); */
 		this.vel = createVector(0, 0);
 		this.acc = createVector(0, 0);
-		this.maxSpeed = 50;
-		this.maxForce = 0.02;
+		this.maxSpeed = 25;
+		this.maxForce = 0.05;
 		this.r = 16;
-		this.countDown = 20;
+		this.countDown = 100;
 		this.antId = id;
 		this.hasFood = false;
 		this.foodTrail = new PheromoneTrail();
@@ -46,10 +46,15 @@ class Ant extends p5.Vector {
 		force.limit(this.maxForce);
 		this.applyForce(force);
 		if (this.countDown <= 0) {
-			this.foodTrail.addPheromone(this.x, this.y);
+			if (this.hasFood) {
+				this.returnTrail.addPheromone(this.x, this.y);
+			} else {
+				this.foodTrail.addPheromone(this.x, this.y);
+			}
 			this.countDown = 20;
 		}
 		foodSearch[this.id] = this.foodTrail;
+		returnTrail[this.id] = this.returnTrail;
 		this.countDown--;
 	}
 
@@ -121,10 +126,21 @@ class Ant extends p5.Vector {
 		rotate(this.vel.heading());
 		rect(0, 0, 20, 1);
 		pop();
-
 		Object.values(foodSearch).forEach((path) => {
 			path.show();
 		});
+		Object.values(returnTrail).forEach((path) => {
+			path.show();
+		});
+	}
+
+	checkFoodCollision(food) {
+		let search = 10;
+		if (food.x >= this.x - search && food.x <= this.x + search) {
+			if (food.y >= this.y - search && food.y <= this.y + search) {
+				this.hasFood = true;
+			}
+		}
 	}
 }
 
