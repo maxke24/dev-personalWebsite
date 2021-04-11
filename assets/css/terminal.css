@@ -163,3 +163,7 @@ li {
 #lines p {
 	padding: 0;
 }
+
+video {
+	display: none;
+}

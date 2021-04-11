@@ -146,6 +146,14 @@ function colorHelp(command) {
 function runCommand(command) {
 	let tagText;
 	switch (command) {
+		case "sudo":
+		case "root":
+			$("video").css("display", "block");
+			console.log($("video"));
+			$("video")[0].play();
+			$("video").on("ended", function () {
+				$("video").css("display", "none");
+			});
 		case "help":
 			showAllCommands();
 			break;
