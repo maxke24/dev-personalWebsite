@@ -34,7 +34,7 @@ section {
 ::-webkit-scrollbar {
 	display: none;
 }
-#about section {
+#about_me section {
 	background-color: var(--secondary);
 	flex-direction: row;
 	align-content: center;
@@ -61,7 +61,7 @@ section > * {
 	text-align: left;
 	align-self: auto;
 }
-#about section > :nth-child(even) {
+#about_me section > :nth-child(even) {
 	border-left: 1px solid var(--subTitle);
 	margin: 2vw auto;
 }
@@ -72,20 +72,20 @@ main > article {
 main:first-child {
 	grid-area: intro;
 }
-#about {
+#about_me {
 	grid-area: about;
 }
 h1 {
 	text-align: center;
 }
-#about h2 {
+#about_me h2 {
 	font-size: 4vw;
 }
-article:not(#about) h2 {
+article:not(#about_me) h2 {
 	text-align: center;
 }
-#about h2,
-#about h3 {
+#about_me h2,
+#about_me h3 {
 	align-self: center;
 }
 a {
@@ -119,7 +119,7 @@ p {
 	font-size: 1vw;
 	font-weight: 700;
 	line-height: 1.2;
-	color: var(--text);
+	color: #fff;
 }
 h1,
 h2 {
