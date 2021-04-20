@@ -103,7 +103,6 @@ main > article {
 main:first-child {
 	grid-area: intro;
 }
-
 #about_me {
 	grid-area: about;
 	background-color: #0d0106;
