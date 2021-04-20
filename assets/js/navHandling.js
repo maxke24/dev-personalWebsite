@@ -9,7 +9,7 @@
  */
 
 const OPTIONS = [
-	["#202020ff", "#3F3F3Fff", "#ffffffff", "#ffffffff", "#707070ff"],
+	["#202020ff", "#3F3F3Fff", "#ffffffff", "#f9a602", "#ffffff"],
 	/*body---------nav--------nav text------start--------end-----------text------subtext----border*/
 	/*1*/ ["#C76B98ff", "#46344eff", "#ffffffff", "#270F36ff", "#270F36ff"],
 	/*2*/ ["#0063B2FF", "#46344eff", "#ffffffff", "#F6E8EAff", "#F6E8EAff"],
@@ -23,20 +23,8 @@ const OPTIONS = [
 	/*10*/
 ];
 
-const DARKMODE = [
-	"#202020ff",
-	"#3F3F3Fff",
-	"#ffffffff",
-	"#ffffffff",
-	"#707070ff",
-];
-const LIGHTMODE = [
-	"#89ABE3FF",
-	"#FCF6F5FF",
-	"#20202080",
-	"#20202080",
-	"#20202080",
-];
+const DARKMODE = ["#202020ff", "#3F3F3Fff", "#ffffffff", "#f9a602", "#ffffff"];
+const LIGHTMODE = ["#89ABE3FF", "#FCF6F5FF", "#20202080", "#20202080", "#20202080"];
 
 function openNav() {
 	document.querySelector("nav").classList.add("open");
@@ -102,9 +90,7 @@ $("nav").load("nav.html", () => {
 	document.querySelector("#openMenu").addEventListener("click", openNav);
 	document.querySelector(".closebtn").addEventListener("click", closeNav);
 
-	if (
-		document.querySelector("body").getAttribute("data-page") !== "portfolio"
-	) {
+	if (document.querySelector("body").getAttribute("data-page") !== "portfolio") {
 		$("#home").on("click", function (event) {
 			event.preventDefault();
 
@@ -121,7 +107,27 @@ $("nav").load("nav.html", () => {
 			closeNav();
 			$("html, body").animate(
 				{
-					scrollTop: $("#about>section").offset().top,
+					scrollTop: $("#about_me>section").offset().top,
+				},
+				800
+			);
+		});
+
+		$("#portfolioLink").on("click", function (event) {
+			closeNav();
+			$("html, body").animate(
+				{
+					scrollTop: $("#portfolio").offset().top,
+				},
+				800
+			);
+		});
+
+		$("#mouse").on("click", function (event) {
+			closeNav();
+			$("html, body").animate(
+				{
+					scrollTop: $("#portfolio").offset().top,
 				},
 				800
 			);

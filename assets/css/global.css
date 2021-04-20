@@ -1,3 +1,16 @@
+/* --Imports-- */
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200&family=Prompt:wght@200&family=Trirong:ital,wght@1,100&display=swap");
+
+/* --Scrollbar-- */
+::-webkit-scrollbar {
+	display: none;
+}
+
+section::-webkit-scrollbar {
+	display: none;
+}
+
+/* --Containers-- */
 body {
 	font-family: Lexend, sans-serif;
 	color: var(--title);
@@ -13,14 +26,12 @@ body {
 }
 main {
 	display: grid;
-	grid-template-areas: "section" "about";
+	grid-template-areas: "section" "portfolio" "about";
 	width: 100%;
 	grid-template-rows: 100vh;
 	position: absolute;
 }
-section::-webkit-scrollbar {
-	display: none;
-}
+
 section {
 	-ms-overflow-style: none;
 	position: relative;
@@ -30,62 +41,117 @@ section {
 	justify-content: center;
 	display: flex;
 	padding-bottom: 1vw;
+	z-index: 2;
+	height: inherit;
 }
-::-webkit-scrollbar {
-	display: none;
-}
-#about section {
-	background-color: var(--secondary);
+
+#about_me section {
 	flex-direction: row;
 	align-content: center;
 	align-items: center;
 	padding: 1vw 15vw;
 }
-main article:first-child section > * {
-	width: 60%;
-	align-self: center;
-}
+
 main > article:first-child {
 	justify-content: center;
 	box-shadow: var(--shadow);
-	z-index: 1;
+	position: fixed;
 }
-article {
+
+main > article:first-child:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background: url("../images/possible_background.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	-webkit-filter: blur(7px);
+	/* Chrome, Opera */
+	-moz-filter: blur(7px);
+	-ms-filter: blur(7px);
+	filter: blur(7px);
+}
+
+article#about_me {
 	display: flex;
 	width: 100vw;
 	height: 100%;
 	flex-flow: column;
+	margin-top: 5rem;
+
+	border-top: 1px solid #f9a602;
+	border-width: 1px;
+	border-style: solid;
+	border-image: linear-gradient(
+			to left,
+			rgba(0, 0, 0, 0),
+			#f9a602,
+			rgba(0, 0, 0, 0)
+		)
+		1 0 100%;
 }
+
+main > article {
+	position: relative;
+	height: 100%;
+}
+
+main:first-child {
+	grid-area: intro;
+}
+
+#about_me {
+	grid-area: about;
+	background-color: #0d0106;
+}
+
+#portfolio {
+	grid-area: portfolio;
+	background-color: #0d0106;
+}
+
+canvas {
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+/* --Text-- */
+
+main article:first-child section > * {
+	width: 60%;
+	align-self: center;
+}
+
 section > * {
 	width: 50%;
 	text-align: left;
 	align-self: auto;
 }
-#about section > :nth-child(even) {
+#about_me section > :nth-child(even) {
 	border-left: 1px solid var(--subTitle);
 	margin: 2vw auto;
 }
-main > article {
-	position: relative;
-	height: 100%;
-}
-main:first-child {
-	grid-area: intro;
-}
-#about {
-	grid-area: about;
-}
+
 h1 {
 	text-align: center;
+	font-family: "Prompt", sans-serif;
+	line-height: 0.9;
 }
-#about h2 {
-	font-size: 4vw;
+#about_me h2 {
+	font-size: 8vmin;
 }
-article:not(#about) h2 {
+article:nth-child(2) h2 {
 	text-align: center;
+	margin-top: 7vmin;
+	line-height: 1.7;
+	font-size: 3vmin;
 }
-#about h2,
-#about h3 {
+#about_me h2,
+#about_me h3 {
 	align-self: center;
 }
 a {
@@ -98,10 +164,12 @@ h3,
 h4,
 p {
 	padding: 0.5vw;
+	font-family: "Trirong", serif;
 }
 h1 {
 	font-size: 5vw;
 	color: var(--title);
+	font-family: "Prompt", sans-serif;
 }
 h2 {
 	font-size: 2.4vw;
@@ -112,7 +180,7 @@ h3 {
 	color: var(--subTitle);
 }
 h4 {
-	font-size: 2.2vw;
+	font-size: 3vmin;
 	color: var(--subTitle);
 }
 p {
@@ -120,6 +188,7 @@ p {
 	font-weight: 700;
 	line-height: 1.2;
 	color: var(--text);
+	font-family: "Mukta", sans-serif;
 }
 h1,
 h2 {
@@ -129,6 +198,8 @@ h3,
 p {
 	align-self: flex-end;
 }
+
+/* --Navigation-- */
 nav {
 	position: fixed;
 	font-weight: 700;
@@ -168,6 +239,9 @@ nav a {
 	display: block;
 	width: 10vw;
 }
+
+/* --Media Queries-- */
+
 @media (max-width: 800px) {
 	h1,
 	h2 {
@@ -256,4 +330,17 @@ nav a {
 		text-align: right;
 		right: 1rem;
 	}
+}
+
+/* --images-- */
+
+#mouse {
+	position: fixed;
+	width: 7rem;
+	bottom: 2rem;
+}
+
+#mouse > object {
+	width: 100%;
+	pointer-events: none;
 }
