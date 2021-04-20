@@ -175,27 +175,31 @@ h2 {
 	color: var(--subTitle);
 }
 h3 {
-	font-size: 2.3vw;
+	font-size: 1.5rem;
 	color: var(--subTitle);
 }
 h4 {
-	font-size: 3vmin;
+	font-size: 0.7rem;
 	color: var(--subTitle);
 }
 p {
-	font-size: 1vw;
+	font-size: 1rem;
 	font-weight: 700;
-	line-height: 1.2;
 	color: var(--text);
 	font-family: "Mukta", sans-serif;
+	margin-bottom: 2rem;
 }
 h1,
 h2 {
 	align-self: flex-start;
 }
 h3,
+h4,
 p {
 	align-self: flex-end;
+	/* font-size: 1rem; */
+	line-height: 1.5;
+	margin-left: 1rem;
 }
 
 /* --Navigation-- */

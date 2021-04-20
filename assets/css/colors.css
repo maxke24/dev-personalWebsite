@@ -1,37 +1,16 @@
-@media (prefers-color-scheme: light) {
-	:root {
-		--primary: #89abe3ff;
-		--secondary: #fcf6f5ff;
-		--title: #20202080;
-		--subTitle: #556784;
-		--text: #202020;
+:root {
+	--primary: #202020ff;
+	--secondary: #3f3f3fff;
+	--title: #ffffffff;
+	--subTitle: #f9a602;
+	--text: #fff;
 
-		--start-gradient: #fcf6f5ff;
-		--end-gradient: #fcf6f5ff;
-		--articles: linear-gradient(
-			to top left,
-			var(--start-gradient),
-			var(--end-gradient)
-		);
-		--shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.8);
-	}
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--primary: #202020ff;
-		--secondary: #3f3f3fff;
-		--title: #ffffffff;
-		--subTitle: #f9a602;
-		--text: #fff;
-
-		--start-gradient: #202020ff;
-		--end-gradient: #3f3f3fff;
-		--articles: linear-gradient(
-			to top left,
-			var(--start-gradient),
-			var(--end-gradient)
-		);
-		--shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.8);
-	}
+	--start-gradient: #202020ff;
+	--end-gradient: #3f3f3fff;
+	--articles: linear-gradient(
+		to top left,
+		var(--start-gradient),
+		var(--end-gradient)
+	);
+	--shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.8);
 }
