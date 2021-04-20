@@ -56,6 +56,7 @@ main > article:first-child {
 	justify-content: center;
 	box-shadow: var(--shadow);
 	position: fixed;
+	width: 100%;
 }
 
 main > article:first-child:after {
@@ -113,6 +114,11 @@ main:first-child {
 	background-color: #0d0106;
 }
 
+#about_me section > :nth-child(even) {
+	border-left: 1px solid var(--subTitle);
+	margin: 2vw auto;
+}
+
 canvas {
 	position: fixed;
 	top: 0;
@@ -123,85 +129,67 @@ canvas {
 main article:first-child section > * {
 	width: 60%;
 	align-self: center;
+	text-align: center;
 }
 
 section > * {
 	width: 50%;
-	text-align: left;
-	align-self: auto;
-}
-#about_me section > :nth-child(even) {
-	border-left: 1px solid var(--subTitle);
-	margin: 2vw auto;
 }
 
-h1 {
-	text-align: center;
-	font-family: "Prompt", sans-serif;
-	line-height: 0.9;
-}
-#about_me h2 {
-	font-size: 8vmin;
-}
 article:nth-child(2) h2 {
 	text-align: center;
 	margin-top: 7vmin;
 	line-height: 1.7;
 	font-size: 3vmin;
 }
-#about_me h2,
-#about_me h3 {
-	align-self: center;
-}
+
 a {
 	text-decoration: none;
 	color: var(--subText);
 }
-h1,
-h2,
-h3,
-h4,
-p {
-	padding: 0.5vw;
-	font-family: "Trirong", serif;
-}
+
 h1 {
-	font-size: 5vw;
-	color: var(--title);
+	text-align: center;
 	font-family: "Prompt", sans-serif;
+	line-height: 0.9;
+	font-size: 10vmin;
+	padding: 0.5vw;
+	color: var(--title);
 }
+
 h2 {
-	font-size: 2.4vw;
+	font-size: 3vmin;
 	color: var(--subTitle);
 }
-h3 {
-	font-size: 1.5rem;
-	color: var(--subTitle);
-}
-h4 {
-	font-size: 0.7rem;
-	color: var(--subTitle);
-}
-p {
-	font-size: 1rem;
-	font-weight: 700;
-	color: var(--text);
-	font-family: "Mukta", sans-serif;
-	margin-bottom: 2rem;
-}
-h1,
-h2 {
-	align-self: flex-start;
-}
+
+#about_me h2,
 h3,
-h4,
-p {
-	align-self: flex-end;
-	/* font-size: 1rem; */
-	line-height: 1.5;
+h4 {
+	font-size: 7vmin;
+	color: var(--subTitle);
+	padding: 0 0.5vw;
+	font-family: "Trirong", serif;
 	margin-left: 1rem;
 }
 
+h3 {
+	font-size: 4.5vmin;
+}
+
+h4 {
+	font-size: 2.7vmin;
+}
+
+p,
+figcaption {
+	align-self: flex-end;
+	line-height: 1.5;
+	font-size: 2.4vmin;
+	padding: 0.5vw;
+	color: var(--text);
+	font-family: "Mukta", sans-serif;
+	margin: 1rem;
+}
 /* --Navigation-- */
 nav {
 	position: fixed;

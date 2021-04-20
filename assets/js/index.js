@@ -8,7 +8,9 @@ $(document).ready(function () {
 		$.getScript("assets/js/terminalFunctionality.js");
 		$.getScript("assets/js/terminal.js");
 		$.getScript("assets/js/dragHandler.min.js");
-		$.getScript("assets/js/localforage.min.js").then(() => {
+		$.getScript(
+			"assets/js/localforage.min.js"
+		) /* .then(() => {
 			localforage.getItem("theme").then((response) => {
 				if (response) {
 					setStyling(response);
@@ -17,7 +19,7 @@ $(document).ready(function () {
 					userPrefersDark ? localforage.setItem("theme", DARKMODE) : localforage.setItem("theme", LIGHTMODE);
 				}
 			});
-		});
+		}) */;
 	});
 });
 
