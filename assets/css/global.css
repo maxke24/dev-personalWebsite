@@ -14,8 +14,6 @@ section::-webkit-scrollbar {
 body {
 	font-family: Lexend, sans-serif;
 	color: var(--title);
-	height: 100%;
-	width: 100%;
 	background-color: var(--primary);
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -27,9 +25,9 @@ body {
 main {
 	display: grid;
 	grid-template-areas: "section" "portfolio" "about";
-	width: 100%;
 	grid-template-rows: 100vh;
 	position: absolute;
+	width: 100%;
 }
 
 section {
@@ -46,17 +44,18 @@ section {
 }
 
 #about_me section {
-	flex-direction: row;
+	flex-direction: column;
 	align-content: center;
 	align-items: center;
-	padding: 1vw 15vw;
+	padding: 1vmin;
+	width: 80vmin;
+	margin: auto;
 }
 
 main > article:first-child {
 	justify-content: center;
 	box-shadow: var(--shadow);
 	position: fixed;
-	width: 100%;
 }
 
 main > article:first-child:after {
@@ -64,8 +63,6 @@ main > article:first-child:after {
 	position: absolute;
 	left: 0;
 	top: 0;
-	width: 100%;
-	height: 100%;
 	z-index: 1;
 	background: url("../images/possible_background.png");
 	background-repeat: no-repeat;
@@ -75,14 +72,14 @@ main > article:first-child:after {
 	-moz-filter: blur(7px);
 	-ms-filter: blur(7px);
 	filter: blur(7px);
+	width: 100%;
+	height: 100%;
 }
 
 article#about_me {
 	display: flex;
-	width: 100vw;
-	height: 100%;
 	flex-flow: column;
-	margin-top: 5rem;
+	margin-top: 2vmin;
 
 	border-top: 1px solid #f9a602;
 	border-width: 1px;
@@ -99,6 +96,7 @@ article#about_me {
 main > article {
 	position: relative;
 	height: 100%;
+	width: 100vw;
 }
 
 main:first-child {
@@ -116,7 +114,8 @@ main:first-child {
 
 #about_me section > :nth-child(even) {
 	border-left: 1px solid var(--subTitle);
-	margin: 2vw auto;
+	margin: 2vmin auto;
+	width: 100%;
 }
 
 canvas {
@@ -127,20 +126,14 @@ canvas {
 /* --Text-- */
 
 main article:first-child section > * {
-	width: 60%;
 	align-self: center;
 	text-align: center;
+	width: 80vmin;
 }
 
-section > * {
-	width: 50%;
-}
-
-article:nth-child(2) h2 {
-	text-align: center;
+#about_me:nth-child(3) h2 {
 	margin-top: 7vmin;
-	line-height: 1.7;
-	font-size: 3vmin;
+	width: 100%;
 }
 
 a {
@@ -152,39 +145,44 @@ h1 {
 	text-align: center;
 	font-family: "Prompt", sans-serif;
 	line-height: 0.9;
-	font-size: 10vmin;
+	font-size: calc(28px + 8vmin);
 	padding: 0.5vw;
 	color: var(--title);
+	margin-bottom: 5rem;
 }
 
 h2 {
-	font-size: 3vmin;
+	font-size: calc(20px + 2vmin);
 	color: var(--subTitle);
+	margin: 0 auto;
+}
+
+#about_me h2 {
+	margin-left: 0;
 }
 
 #about_me h2,
 h3,
 h4 {
-	font-size: 7vmin;
+	font-size: calc(18px + 5vmin);
 	color: var(--subTitle);
 	padding: 0 0.5vw;
 	font-family: "Trirong", serif;
 	margin-left: 1rem;
 }
-
 h3 {
-	font-size: 4.5vmin;
+	font-size: calc(16px + 2.7vmin);
 }
 
 h4 {
-	font-size: 2.7vmin;
+	font-size: calc(14px + 1.3vmin);
 }
 
 p,
 figcaption {
 	align-self: flex-end;
 	line-height: 1.5;
-	font-size: 2.4vmin;
+	font-size: calc(12px + 1.3vmin);
 	padding: 0.5vw;
 	color: var(--text);
 	font-family: "Mukta", sans-serif;
@@ -232,18 +230,6 @@ nav a {
 }
 
 /* --Media Queries-- */
-
-@media (max-width: 800px) {
-	h1,
-	h2 {
-		width: 60%;
-		font-size: 2.4rem;
-	}
-	h2 {
-		font-size: 1.5rem;
-		font-weight: 400;
-	}
-}
 @media (max-width: 1050px) {
 	nav {
 		height: 100%;
@@ -327,7 +313,7 @@ nav a {
 
 #mouse {
 	position: fixed;
-	width: 7rem;
+	width: calc(70px + 5vmin);
 	bottom: 2rem;
 }
 

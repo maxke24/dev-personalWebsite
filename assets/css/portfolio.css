@@ -1,28 +1,63 @@
-article#portfolio {
-	display: flex;
-	flex-wrap: wrap;
-	margin: auto;
-	padding: 3rem;
-	gap: 1vmin;
-	box-shadow: -2px -2px 5px 0 rgba(5, 5, 5, 0.8);
+/* --Containers-- */
+#portfolio {
+	flex-flow: wrap;
+	padding-bottom: 1rem;
+	display: grid;
+	justify-content: center;
+	grid-auto-rows: 1fr;
 }
 
-article#portfolio > article {
-	flex: 1 1 25%;
-	background: rgba(255, 255, 255, 0.2);
-	padding: 1rem;
+.project {
+	background: inherit;
+	position: relative;
+	top: 2vh;
+	margin: 2vh 1vw;
+	padding: 1vh 1vw;
 	border-radius: 0.3rem;
-	/* 	min-height: min-content;
-	max-height: 40rem; */
+	background: #15010a;
+	box-shadow: 9px 0 rgba(0, 0, 0, 0.1);
 }
 
 img {
 	width: 100%;
-	border-radius: 0.3rem;
+	box-shadow: var(--shadow);
 }
 
-article#portfolio > article.project > h2 {
-	margin: 0;
-	font-size: 2rem;
-	width: auto;
+.project h2 {
+	margin: 2vmin;
+}
+
+@media screen and (max-width: 400px) {
+	/* --Containers-- */
+	#portfolio {
+		grid-template-columns: auto;
+	}
+}
+
+@media screen and (min-width: 401px) and (max-width: 900px) {
+	/* --Containers-- */
+	#portfolio {
+		grid-template-columns: auto auto;
+	}
+}
+
+@media screen and (min-width: 900px) and (max-width: 1440px) {
+	/* --Containers-- */
+	#portfolio {
+		grid-template-columns: auto auto auto;
+	}
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1800px) {
+	/* --Containers-- */
+	#portfolio {
+		grid-template-columns: auto auto auto auto;
+	}
+}
+
+@media screen and (min-width: 1801px) {
+	/* --Containers-- */
+	#portfolio {
+		grid-template-columns: auto auto auto auto auto;
+	}
 }
