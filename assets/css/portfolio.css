@@ -1,63 +1,50 @@
-/* --Containers-- */
-#portfolio {
-	flex-flow: wrap;
-	padding-bottom: 1rem;
+#portfolio > div {
 	display: grid;
-	justify-content: center;
-	grid-auto-rows: 1fr;
+	width: 60%;
+	margin: auto;
+	grid-gap: 1vmin;
+	grid-template-columns: repeat(auto-fit, minmax(30vmin, 1fr));
+	padding: 5vmin;
 }
 
 .project {
-	background: inherit;
 	position: relative;
-	top: 2vh;
-	margin: 2vh 1vw;
-	padding: 1vh 1vw;
-	border-radius: 0.3rem;
-	background: #15010a;
-	box-shadow: 9px 0 rgba(0, 0, 0, 0.1);
 }
 
 img {
+	display: block;
 	width: 100%;
-	box-shadow: var(--shadow);
+	height: auto;
 }
 
-.project h2 {
-	margin: 2vmin;
+figcaption {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: 0.25s ease;
+	background-color: #0d0106;
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 1);
 }
 
-@media screen and (max-width: 400px) {
-	/* --Containers-- */
-	#portfolio {
-		grid-template-columns: auto;
-	}
+.project:hover figcaption {
+	opacity: 1;
+	margin: 0;
+	padding: 0;
 }
 
-@media screen and (min-width: 401px) and (max-width: 900px) {
-	/* --Containers-- */
-	#portfolio {
-		grid-template-columns: auto auto;
-	}
-}
-
-@media screen and (min-width: 900px) and (max-width: 1440px) {
-	/* --Containers-- */
-	#portfolio {
-		grid-template-columns: auto auto auto;
-	}
-}
-
-@media screen and (min-width: 1441px) and (max-width: 1800px) {
-	/* --Containers-- */
-	#portfolio {
-		grid-template-columns: auto auto auto auto;
-	}
-}
-
-@media screen and (min-width: 1801px) {
-	/* --Containers-- */
-	#portfolio {
-		grid-template-columns: auto auto auto auto auto;
-	}
+figcaption > p {
+	color: white;
+	font-size: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
 }
