@@ -64,7 +64,7 @@ main > article:first-child:after {
 	left: 0;
 	top: 0;
 	z-index: 1;
-	background: url("../images/possible_background.png");
+	background: url("../images/background.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 	-webkit-filter: blur(7px);
@@ -306,6 +306,12 @@ nav a {
 		position: absolute;
 		text-align: right;
 		right: 1rem;
+	}
+}
+
+@media all and (orientation: portrait) {
+	main > article:first-child:after {
+		background: url("../images/background_phone.png");
 	}
 }
 
