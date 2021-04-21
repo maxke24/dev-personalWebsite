@@ -59,7 +59,7 @@ main > article:first-child {
 }
 
 main > article:first-child:after {
-	--blur-amount: blur(2px);
+	--blur-amount: blur(5px);
 	content: "";
 	position: absolute;
 	left: 0;
