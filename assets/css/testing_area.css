@@ -1,0 +1,23 @@
+img {
+	width: 100%;
+}
+
+#portfolio {
+	width: 60%;
+	margin: auto;
+}
+
+#portfolio {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+#side-images {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(5, 0.1fr);
+}
+
+.project {
+	height: min-content;
+}

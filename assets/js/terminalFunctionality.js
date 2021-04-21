@@ -149,11 +149,11 @@ function runCommand(command) {
 		case "sudo":
 		case "root":
 			$("video").css("display", "block");
-			console.log($("video"));
 			$("video")[0].play();
 			$("video").on("ended", function () {
 				$("video").css("display", "none");
 			});
+			break;
 		case "help":
 			showAllCommands();
 			break;
