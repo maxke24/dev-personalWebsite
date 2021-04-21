@@ -1,14 +1,19 @@
-#portfolio > div {
+#portfolio div {
 	display: grid;
-	width: 60%;
+	width: 150vmin;
 	margin: auto;
-	grid-gap: 1vmin;
+	grid-gap: 2vmin;
 	grid-template-columns: repeat(auto-fit, minmax(30vmin, 1fr));
-	padding: 5vmin;
+	margin-top: 3vmin;
+}
+
+#portfolio > section > h2 {
+	margin-top: 7vmin;
 }
 
 .project {
 	position: relative;
+	transition: transform 0.25s ease-in-out;
 }
 
 img {
@@ -26,15 +31,13 @@ figcaption {
 	height: 100%;
 	width: 100%;
 	opacity: 0;
-	transition: 0.25s ease;
 	background-color: #0d0106;
 	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 1);
 }
 
-.project:hover figcaption {
-	opacity: 1;
-	margin: 0;
-	padding: 0;
+.project:hover {
+	transform: scale(1.05);
+	z-index: 2;
 }
 
 figcaption > p {

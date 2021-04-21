@@ -21,6 +21,7 @@ body {
 	-ms-user-select: none;
 	user-select: none;
 	overflow-x: hidden;
+	max-width: 50ch;
 }
 main {
 	display: grid;
@@ -47,7 +48,6 @@ section {
 	flex-direction: column;
 	align-content: center;
 	align-items: center;
-	padding: 1vmin;
 	width: 80vmin;
 	margin: auto;
 }
@@ -134,12 +134,11 @@ main article:first-child section > * {
 
 #about_me:nth-child(3) h2 {
 	margin-top: 7vmin;
-	width: 100%;
 }
 
 a {
 	text-decoration: none;
-	color: var(--subText);
+	color: var(--subTitle);
 }
 
 h1 {
