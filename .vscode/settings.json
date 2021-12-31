@@ -1,4 +1,5 @@
 {
     "editor.formatOnSave": true,
-    "liveServer.settings.multiRootWorkspaceName": "dev-personalWebsite"
+    "liveServer.settings.multiRootWorkspaceName": "dev-personalWebsite",
+    "liveServer.settings.port": 5501
 }
