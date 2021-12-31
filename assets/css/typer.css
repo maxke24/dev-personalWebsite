@@ -46,6 +46,15 @@ h6 {
     margin: 0
 }
 
+h2{
+    font-size: 1.5rem;
+    padding: 2rem;
+}
+
+h2 + h2{
+    padding-top: 0;
+}
+
 .container {
     border: 1px solid #d4af37;
     display: flex;

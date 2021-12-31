@@ -65,7 +65,7 @@ function keepTimeAndCalculateWPM() {
         time.innerHTML = convert(elapsed);
         let cpm = Math.floor((characters.length / elapsed * 6000 * 10) / 4.7);
         let accuracy = Math.floor(100 - wrongCharacters.length / characters.length * 100, 2);
-        wpm.innerText = `wpm: ${cpm} \t accuracy: ${accuracy}% \t wc: ${typedCorrectText.innerText.split(" ").length}/ ${text.length}`;
+        wpm.innerText = `wpm: ${cpm} \t accuracy: ${accuracy}% \t Wordcount: ${typedCorrectText.innerText.split(" ").length}/ ${text.length}`;
         document.querySelector("article").scrollTop = typedWrongText.offsetTop - 500;
     }
 }
