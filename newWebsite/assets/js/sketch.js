@@ -3,7 +3,8 @@ let h = window.innerHeight;
 let circles = {};
 let jsondict;
 const nodes = [];
-const offset = 200;
+let offset = 200;
+let nodeDiff = 1.6;
 let activeCircle;
 
 fetch('/newWebsite/assets/experiences.json')
@@ -38,12 +39,19 @@ function setupLayers() {
 	drawingContext.shadowOffsetY = 2;
 	drawingContext.shadowBlur = 20;
 	drawingContext.shadowColor = 'black';
-	createLayer(1, L1, 'About', '#89CFF0');
+	/* 	createLayer(1, L1, 'About', '#89CFF0');
 	createLayer(5, L2, 'Education', '#FFD700');
 	createLayer(4, L3, 'Experiences', '#FFD700');
 	createLayer(4, L4, 'Projects', '#FFD700');
 	createLayer(5, L5, 'Events', '#FFD700');
-	createLayer(3, L6, 'Output', '#89CFF0');
+	createLayer(3, L6, 'Output', '#89CFF0'); */
+
+	createLayer1(L1, 'About', '#89CFF0');
+	createLayer5(L2, 'Education', '#FFD700');
+	createLayer4(L3, 'Experiences', '#FFD700');
+	createLayer4(L4, 'Projects', '#FFD700');
+	createLayer5(L5, 'Events', '#FFD700');
+	createLayer3(L6, 'Output', '#89CFF0');
 }
 
 function draw() {
@@ -70,26 +78,102 @@ function draw() {
 }
 
 function drawLines(nodes, previousNodes, x, previousX) {
-	const LHP = h / 1.5 / (previousNodes + 1);
-	const LH = h / 1.5 / (nodes + 1);
+	pNodeDiff = 1.6;
+	pOffset = 200;
+	nodeDiff = 1.6;
+	offset = 200;
+	if (nodes % 2 == 0) {
+		nodeDiff = 1.9;
+		offset = 250;
+	}
+	if (previousNodes % 2 == 0) {
+		pNodeDiff = 1.9;
+		pOffset = 250;
+	}
+	if (nodes === 3) {
+		nodeDiff += 0.8;
+		offset = 300;
+	}
+	const LHP = h / pNodeDiff / (previousNodes + 1);
+	const LH = h / nodeDiff / (nodes + 1);
 	for (let i = 1; i <= previousNodes; i++) {
 		for (let j = 1; j <= nodes; j++) {
-			line(previousX, LHP * i + offset, x, LH * j + offset);
+			let previousY = LHP * i + pOffset;
+			let y = LH * j + offset;
+			line(previousX, previousY, x, y);
 		}
 	}
 }
 
-function createLayer(nodeAmount, x, layerPurpose, color) {
-	const NH = h / 1.5 / (nodeAmount + 1);
+function createLayer1(x, layerPurpose, color) {
+	nodeDiff = 1.6;
+	offset = 200;
+
+	const NH = h / nodeDiff / 6;
+	let p = createP(layerPurpose);
+	p.position(x - p.width / 2, NH + offset + 135);
+	p.addClass('blue');
+	const y = NH * 3 + offset;
+	let imgPath = jsondict[layerPurpose][1].Link;
+	let node = new Node(x, y, color, imgPath);
+	let a = createA('#', '');
+	a.position(x - 15, y - 15);
+	nodes.push(node);
+	let circ = {};
+	circ[1] = node;
+	circles[layerPurpose] = circ;
+}
+
+function createLayer3(x, layerPurpose, color) {
+	nodeDiff = 1.6;
+	offset = 200;
+
+	const NH = h / nodeDiff / 6;
+
+	let p = createP(layerPurpose);
+	p.position(x - p.width / 2, NH + offset + 25);
+	p.addClass('blue');
+
+	let circ = {};
+	for (let i = 1; i <= 3; i++) {
+		const y = NH * (i + 1) + offset;
+		let imgPath = jsondict[layerPurpose][i].Link;
+		let node = new Node(x, y, color, imgPath);
+		let a = createA('#', '');
+		a.position(x - 15, y - 15);
+		nodes.push(node);
+		circ[i] = node;
+	}
+	circles[layerPurpose] = circ;
+	offset = 300;
+	let y = NH + offset - p.height / 2;
+	let xPos = w - p.width * 3.6;
+	p = createP('80% Datascientist');
+	p.position(xPos, y);
+
+	y = NH * 2 + offset - p.height / 2;
+	xPos = w - p.width * 1.4;
+	p = createP('15% Data analyst');
+	p.position(xPos, y);
+
+	y = NH * 3 + offset - p.height / 2;
+	xPos = w - p.width * 1.45;
+	p = createP('5% Data engineer');
+	p.position(xPos, y);
+}
+
+function createLayer4(x, layerPurpose, color) {
+	nodeDiff = 1.9;
+	offset = 250;
+
+	const NH = h / nodeDiff / 5;
+
 	let p = createP(layerPurpose);
 	p.position(x - p.width / 2, NH + offset - 65);
-	if (layerPurpose === 'About' || layerPurpose === 'Output') {
-		p.addClass('blue');
-	} else {
-		p.addClass('yellow');
-	}
+	p.addClass('yellow');
+
 	let circ = {};
-	for (let i = 1; i <= nodeAmount; i++) {
+	for (let i = 1; i <= 4; i++) {
 		const y = NH * i + offset;
 		let imgPath = jsondict[layerPurpose][i].Link;
 		let node = new Node(x, y, color, imgPath);
@@ -99,18 +183,29 @@ function createLayer(nodeAmount, x, layerPurpose, color) {
 		circ[i] = node;
 	}
 	circles[layerPurpose] = circ;
+}
 
-	if (layerPurpose === 'Output') {
-		let y = NH;
-		let p = createP('80% Datascientist');
-		p.position(w - p.width * 1.4, y + offset - p.height / 2);
+function createLayer5(x, layerPurpose, color) {
+	nodeDiff = 1.6;
+	offset = 200;
 
-		p = createP('15% Data analyst');
-		p.position(w - p.width * 1.5, y * 2 + offset - p.height / 2);
+	const NH = h / nodeDiff / 6;
 
-		p = createP('5% Data engineer');
-		p.position(w - p.width * 1.45, y * 3 + offset - p.height / 2);
+	let p = createP(layerPurpose);
+	p.position(x - p.width / 2, NH + offset - 65);
+	p.addClass('yellow');
+
+	let circ = {};
+	for (let i = 1; i <= 5; i++) {
+		const y = NH * i + offset;
+		let imgPath = jsondict[layerPurpose][i].Link;
+		let node = new Node(x, y, color, imgPath);
+		let a = createA('#', '');
+		a.position(x - 15, y - 15);
+		nodes.push(node);
+		circ[i] = node;
 	}
+	circles[layerPurpose] = circ;
 }
 
 function mousePressed() {
