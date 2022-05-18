@@ -42,8 +42,8 @@ function draw(){
 
     strokeWeight(3);
     drawingContext.shadowOffsetX = 5;
-    drawingContext.shadowOffsetY = 0;
-    drawingContext.shadowBlur = 10;
+    drawingContext.shadowOffsetY = 2;
+    drawingContext.shadowBlur = 20;
     drawingContext.shadowColor = 'black';
     stroke('#89CFF0');
     createLayer(1, L1, 'About');
@@ -59,8 +59,8 @@ function draw(){
 }
 
 function drawLines(nodes, previousNodes, x, previousX){
-    const LHP = h/(previousNodes+1);
-    const LH = h/(nodes+1);
+    const LHP = h/(previousNodes+0.6);
+    const LH = h/(nodes+0.6);
     for(let i=1; i<=previousNodes; i++){
         for(let j=1; j<=nodes; j++){
             line(previousX, LHP * i, x, LH * j);
@@ -69,7 +69,7 @@ function drawLines(nodes, previousNodes, x, previousX){
 }
 
 function createLayer(nodes, x, layerPurpose){
-    const NH = h/(nodes+1);
+    const NH = h/(nodes+0.6);
     let circ = {};
     for(let i=1; i<=nodes; i++){
         circle(x, NH * i, 50);
@@ -79,11 +79,15 @@ function createLayer(nodes, x, layerPurpose){
 }
 
 function mousePressed() {
+    document.querySelectorAll(".scaled").forEach((el) => {
+        el.remove();
+    })
     for (let [key, value] of Object.entries(circles)){
         for (let [key2, value2] of Object.entries(value)){
             if (dist(mouseX,mouseY,value2.x, value2.y) < 25){
-                console.log(jsondict[key][key2]);
-                createDiv(jsondict[key][key2].Description);
+                const body = jsondict[key][key2]
+                const el = `<h2>${body.Title}</h2><p>${body.Description}</p>`;
+                createDiv(el);
                 const div = document.querySelector("div");
                 div.classList.add("scaled");
             }
