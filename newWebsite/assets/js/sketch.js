@@ -4,6 +4,8 @@ let circles = {};
 let jsondict;
 const nodes = [];
 const offset = 200;
+let activeCircle;
+
 fetch('/newWebsite/assets/experiences.json')
 	.then((response) => {
 		return response.json();
@@ -17,6 +19,9 @@ function setup() {
 	canvas.style('z-index', '-1');
 	background(53);
 	frameRate(10);
+	document.querySelector('a').addEventListener('click', (e) => {
+		document.querySelector('article').remove();
+	});
 }
 
 function setupLayers() {
@@ -89,20 +94,20 @@ function createLayer(nodeAmount, x, layerPurpose, color) {
 		let imgPath = jsondict[layerPurpose][i].Link;
 		let node = new Node(x, y, color, imgPath);
 		nodes.push(node);
-		circ[i] = { x: x, y: y };
+		circ[i] = node;
 	}
 	circles[layerPurpose] = circ;
 
 	if (layerPurpose === 'Output') {
 		let y = NH;
 		let p = createP('80% Datascientist');
-		p.position(w - p.width * 1.4, y + offset);
+		p.position(w - p.width * 1.4, y + offset - p.height / 2);
 
 		p = createP('15% Data analyst');
-		p.position(w - p.width * 1.5, y * 2 + offset);
+		p.position(w - p.width * 1.5, y * 2 + offset - p.height / 2);
 
 		p = createP('5% Data engineer');
-		p.position(w - p.width * 1.45, y * 3 + offset);
+		p.position(w - p.width * 1.45, y * 3 + offset - p.height / 2);
 	}
 }
 
@@ -112,7 +117,9 @@ function mousePressed() {
 	});
 	for (let [key, value] of Object.entries(circles)) {
 		for (let [key2, value2] of Object.entries(value)) {
+			value2.activeColor = '';
 			if (dist(mouseX, mouseY, value2.x, value2.y) < 25) {
+				value2.activeColor = '#0CF574';
 				const body = jsondict[key][key2];
 				const el = `<h2>${body.Title}</h2><p>${body.Description}</p>`;
 				createDiv(el);
