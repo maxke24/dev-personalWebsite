@@ -51,20 +51,29 @@ h1{
     margin: 0;
 }
 
-p{
-    position: fixed;
+.blue:first-of-type{
     top: 8rem;
-    font-size: 1.4rem;
+    position: fixed;
+}
+
+.scaled > p{
     color: #8D918D;
-    /* color: #FFD700; */
+    font-size: 0.8rem;
+}
+
+p{
+    color: #8D918D;
+    font-size: 1.4rem;
 }
 
 .yellow{
     color: #FFD700;
+    font-size: 1.6rem;
 }
 
 .blue{
     color: #89CFF0;
+    font-size: 1.6rem;
 }
 
 @keyframes example {
