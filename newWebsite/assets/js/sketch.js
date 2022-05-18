@@ -120,7 +120,10 @@ function mousePressed() {
 	for (let [key, value] of Object.entries(circles)) {
 		for (let [key2, value2] of Object.entries(value)) {
 			value2.activeColor = '';
-			if (dist(mouseX, mouseY, value2.x, value2.y) < 25) {
+			if (
+				dist(mouseX, mouseY, value2.x, value2.y) < 25 &&
+				!document.querySelector('article')
+			) {
 				value2.activeColor = '#0CF574';
 				const body = jsondict[key][key2];
 				const el = `<h2>${body.Title}</h2><p>${body.Description}</p>`;
