@@ -125,6 +125,7 @@ function mousePressed() {
 				!document.querySelector('article')
 			) {
 				value2.activeColor = '#0CF574';
+				value2.activeColor = '#64b6ac';
 				const body = jsondict[key][key2];
 				const el = `<h2>${body.Title}</h2><p>${body.Description}</p>`;
 				createDiv(el);
