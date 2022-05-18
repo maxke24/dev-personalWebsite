@@ -1,0 +1,69 @@
+line(L1, h/2, L2, ch);
+line(L1, h/2, L2, (ch) * 2);
+line(L1, h/2, L2, (ch) * 3);
+line(L1, h/2, L2, (ch) * 4);
+    
+    line(L2, ch, L3, ch);
+    line(L2, ch, L3, (ch) * 2);
+    line(L2, ch, L3, (ch) * 3);
+    line(L2, ch, L3, (ch) * 4);
+
+    line(L2, (ch) * 2, L3, ch);
+    line(L2, (ch) * 2, L3, (ch) * 2);
+    line(L2, (ch) * 2, L3, (ch) * 3);
+    line(L2, (ch) * 2, L3, (ch) * 4);
+
+    line(L2, (ch) * 3, L3, ch);
+    line(L2, (ch) * 3, L3, (ch) * 2);
+    line(L2, (ch) * 3, L3, (ch) * 3);
+    line(L2, (ch) * 3, L3, (ch) * 4);
+
+    line(L2, (ch) * 4, L3, ch);
+    line(L2, (ch) * 4, L3, (ch) * 2);
+    line(L2, (ch) * 4, L3, (ch) * 3);
+    line(L2, (ch) * 4, L3, (ch) * 4);
+
+    let chp = ch;
+    ch = h/6;
+    /* Third layer */
+    line(L3, chp, L4, ch);
+    line(L3, chp, L4, (ch) * 2);
+    line(L3, chp, L4, (ch) * 3);
+    line(L3, chp, L4, (ch) * 4);
+    line(L3, chp, L4, (ch) * 5);
+
+    line(L3, (chp) * 2, L4, ch);
+    line(L3, (chp) * 2, L4, (ch) * 2);
+    line(L3, (chp) * 2, L4, (ch) * 3);
+    line(L3, (chp) * 2, L4, (ch) * 4);
+    line(L3, (chp) * 2, L4, (ch) * 5);
+
+    line(L3, (chp) * 3, L4, ch);
+    line(L3, (chp) * 3, L4, (ch) * 2);
+    line(L3, (chp) * 3, L4, (ch) * 3);
+    line(L3, (chp) * 3, L4, (ch) * 4);
+    line(L3, (chp) * 3, L4, (ch) * 5);
+    
+    line(L3, (chp) * 4, L4, ch);
+    line(L3, (chp) * 4, L4, (ch) * 2);
+    line(L3, (chp) * 4, L4, (ch) * 3);
+    line(L3, (chp) * 4, L4, (ch) * 4);
+    line(L3, (chp) * 4, L4, (ch) * 5);
+    // /* Second layer */
+    // circle(L2, chp, CD);
+    // circle(L2, chp * 2, CD);
+    // circle(L2, chp * 3, CD);
+    // circle(L2, chp * 4, CD);
+
+    // circle(L3, chp, CD);
+    // circle(L3, chp * 2, CD);
+    // circle(L3, chp * 3, CD);
+    // circle(L3, chp * 4, CD);
+    // /* Second layer */
+    
+
+    // circle(L4, ch, CD);
+    // circle(L4, ch * 2, CD);
+    // circle(L4, ch * 3, CD);
+    // circle(L4, ch * 4, CD);
+    // circle(L4, ch * 5, CD);

@@ -1,0 +1,31 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+canvas{
+    position:fixed;
+    top: 0;
+    left: 0;
+}
+
+div{
+    transition: scale 2s;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 20%;
+    height: 10%;
+    position: relative;
+    padding: 1rem;
+}
+
+@keyframes example {
+    0%   {transform:scale(1);}
+    100%  {transform:scale(3)}
+}
+
+
+.scaled{
+    animation: example 2s forwards;
+}
