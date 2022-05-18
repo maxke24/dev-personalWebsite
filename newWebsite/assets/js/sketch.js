@@ -10,7 +10,7 @@ function setup(){
 
     frameRate(5);
 
-    fetch("/assets/experiences.json")
+    fetch("/newWebsite/assets/experiences.json")
     .then(response => {
         return response.json();
     }).then(output =>{
