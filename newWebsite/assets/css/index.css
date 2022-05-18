@@ -49,13 +49,22 @@ h1{
     top: 0;
     font-size: 8rem;
     margin: 0;
-    
 }
 
-h1 + p{
+p{
     position: fixed;
     top: 8rem;
     font-size: 1.4rem;
+    color: #8D918D;
+    /* color: #FFD700; */
+}
+
+.yellow{
+    color: #FFD700;
+}
+
+.blue{
+    color: #89CFF0;
 }
 
 @keyframes example {
@@ -67,3 +76,9 @@ h1 + p{
 .scaled{
     animation: example 2s forwards;
 }
+
+img{
+    width: 13rem;
+    left: 2rem;
+    position: fixed;
+    }

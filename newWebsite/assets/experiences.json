@@ -99,6 +99,12 @@
         
         }
     },
+
+    "Output":{
+        "1": {"Title": "Datascientist"},
+        "2": {"Title": "Data analyst"},
+        "3": {"Title": "Data engineer"}
+    },
     "Blogs": {
         "1":{
             "Title": "How I created this website.",
