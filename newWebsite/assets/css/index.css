@@ -1,3 +1,4 @@
+/*---Fonts---*/
 @font-face {
 	font-family: GreatVibes;
 	src: url(../fonts/GreatVibes-Regular.ttf);
@@ -18,88 +19,92 @@
 	src: url(../fonts/Andika-Regular.ttf);
 }
 
-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    font-family: Jura;
-    font-weight: 100;
-    overflow:hidden;
+/*---Containers---*/
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	font-family: Jura;
+	font-weight: 100;
+	overflow: hidden;
 }
-canvas{
-    position:fixed;
-    top: 0;
-    left: 0;
-}
-
-div{
-    transition: scale 2s;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.8);
-    position: relative;
-    padding: 1rem;
-    border-radius: 1rem;
-    width: 15%;
-    border: 0.001rem solid #89CFF0;
+canvas {
+	position: fixed;
+	top: 0;
+	left: 0;
 }
 
-h1{
-    color: #8D918D;
-    position: fixed;
-    top: 0;
-    font-size: 8rem;
-    margin: 0;
-    
-    font-weight: 100;
+div {
+	transition: scale 2s;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.9);
+	position: relative;
+	padding: 1rem;
+	border-radius: 1rem;
+	width: 15%;
+	border: 0.001rem solid #89cff0;
 }
 
-h2{
-    color:#FFD700;
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 100;
+/*---Text---*/
+h1 {
+	color: #8d918d;
+	position: fixed;
+	top: 0;
+	font-size: 8rem;
+	margin: 0;
+	font-weight: 100;
 }
 
-.blue:first-of-type{
-    top: 8rem;
-    position: fixed;
+h2 {
+	color: #ffd700;
+	margin: 0;
+	font-size: 1rem;
+	font-weight: 100;
 }
 
-.scaled > p{
-    color: #8D918D;
-    font-size: 0.8rem;
+.blue:first-of-type {
+	top: 10rem;
+	position: fixed;
 }
 
-p{
-    color: #8D918D;
-    font-size: 1.4rem;
-    font-weight: 100;
-    margin: 0;
+.scaled > p {
+	color: #8d918d;
+	font-size: 0.8rem;
 }
 
-.yellow{
-    color: #FFD700;
-    font-size: 1.6rem;
+p {
+	color: #8d918d;
+	font-size: 1.4rem;
+	font-weight: 100;
+	margin: 0;
 }
 
-.blue{
-    color: #89CFF0;
-    font-size: 1.6rem;
+.yellow {
+	color: #ffd700;
+	font-size: 1.6rem;
+}
+
+.blue {
+	color: #89cff0;
+	font-size: 1.6rem;
 }
 
 @keyframes example {
-    0%   {transform:scale(1);}
-    100%  {transform:scale(2.5)}
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(2.5);
+	}
 }
 
-
-.scaled{
-    animation: example 2s forwards;
+.scaled {
+	animation: example 2s forwards;
 }
 
-img{
-    width: 10vw;
-    left: 2rem;
-    position: fixed;
-    }
+img {
+	width: 10vw;
+	left: 2rem;
+	position: fixed;
+}

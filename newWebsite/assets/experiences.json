@@ -8,23 +8,28 @@
 	"Education": {
 		"1": {
 			"Title": "HDC Latin",
-			"Description": "September 2012 - Juni 2013"
+			"Date": "September 2012 - Juni 2013",
+			"Description": "During this one year in latin, I found out that language isn't really my strong suit. I did love to language, but I wasn't good at it."
 		},
 		"2": {
 			"Title": "HDC Economy",
-			"Description": "September 2013 - Juni 2014"
+			"Date": "September 2013 - Juni 2014",
+			"Description": "After my experience with latin, I decided to switch to economics. I was better suited for this, but it was still nog a perfect match."
 		},
 		"3": {
 			"Title": "Minimeninstituut Commerce",
-			"Description": "September 2015 - Juni 2017"
+			"Date": "September 2015 - Juni 2017",
+			"Description": "After my 2 years at HDC, I switched to minimeninstituut. The primary reason for this was because I wanted to do something with informatics. Commerce was the perfect stepping stone to my next track, being IT management."
 		},
 		"4": {
 			"Title": "Minimeninstituut IT management",
-			"Description": "September 2017 - Juni 2019"
+			"Date": "September 2017 - Juni 2019",
+			"Description": "During these two years, I learned a lot about informatics. I really loved it and had a lot of fun. The teachers were excellent and helped me find a suitable further career. I also got to experience an intership abroad thanks to my teachers."
 		},
 		"5": {
 			"Title": "Howest AI & Business Professional",
-			"Description": "September 2019 - Juni 2022"
+			"Date": "September 2019 - Juni 2022",
+			"Description": "After my studies at miniemeninstituut, I decided to go to Howest. I wanted to go to this school because it was said to be one of the hardest. I first entered thinking I would pursuit cyber security, but ended up choosing Artificial Intelligence & Business Professional as a specialization."
 		}
 	},
 	"Experiences": {
@@ -100,9 +105,9 @@
 	},
 
 	"Output": {
-		"1": { "Title": "Datascientist" },
-		"2": { "Title": "Data analyst" },
-		"3": { "Title": "Data engineer" }
+		"1": { "Title": "Datascientist", "Description": "" },
+		"2": { "Title": "Data analyst", "Description": "" },
+		"3": { "Title": "Data engineer", "Description": "" }
 	},
 	"Blogs": {
 		"1": {
