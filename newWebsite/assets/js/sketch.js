@@ -76,7 +76,7 @@ function drawLines(nodes, previousNodes, x, previousX){
 function createLayer(nodeAmount, x, layerPurpose, color){
     const NH = (h/1.5)/(nodeAmount+1);
     let p = createP(layerPurpose);
-    p.position(x - (p.width/2), NH + offset - 100);
+    p.position(x - (p.width/2), NH + offset - 65);
     if(layerPurpose==="About" || layerPurpose==="Output"){
         p.addClass('blue');
     }else{
@@ -93,15 +93,15 @@ function createLayer(nodeAmount, x, layerPurpose, color){
     circles[layerPurpose] = circ;
 
     if(layerPurpose === "Output"){
-        let y = NH + offset - 35;
+        let y = NH;
         let p = createP("80% Datascientist");
-        p.position(w - (p.width * 1.4), y);
+        p.position(w - (p.width * 1.4), y + offset - p.height/2);
 
         p = createP("15% Data analyst");
-        p.position(w - (p.width * 1.4), y * 1.5);
+        p.position(w - (p.width * 1.5), y * 2 + offset - p.height/2);
 
         p = createP("5% Data engineer");
-        p.position(w - (p.width * 1.4), y * 2);
+        p.position(w - (p.width * 1.45), y * 3 + offset - p.height/2);
     }
 }
 
