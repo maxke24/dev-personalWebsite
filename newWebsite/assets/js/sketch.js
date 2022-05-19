@@ -82,6 +82,7 @@ function drawLines(nodes, previousNodes, x, previousX) {
 	pOffset = 200;
 	nodeDiff = 1.6;
 	offset = 200;
+	let nOffset = 0;
 	if (nodes % 2 == 0) {
 		nodeDiff = 1.9;
 		offset = 250;
@@ -92,14 +93,15 @@ function drawLines(nodes, previousNodes, x, previousX) {
 	}
 	if (nodes === 3) {
 		nodeDiff += 0.8;
-		offset = 300;
+		offset = 200;
+		nOffset = 1;
 	}
 	const LHP = h / pNodeDiff / (previousNodes + 1);
 	const LH = h / nodeDiff / (nodes + 1);
 	for (let i = 1; i <= previousNodes; i++) {
 		for (let j = 1; j <= nodes; j++) {
 			let previousY = LHP * i + pOffset;
-			let y = LH * j + offset;
+			let y = LH * (j + nOffset) + offset;
 			line(previousX, previousY, x, y);
 		}
 	}
