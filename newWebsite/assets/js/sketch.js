@@ -111,7 +111,7 @@ function createLayer1(x, layerPurpose, color) {
 
 	const NH = h / nodeDiff / 6;
 	let p = createP(layerPurpose);
-	p.position(x - p.width / 2, NH + offset + 135);
+	p.position(x - p.width / 2, NH * 3 + offset - 65);
 	p.addClass('blue');
 	const y = NH * 3 + offset;
 	let imgPath = jsondict[layerPurpose][1].Link;
@@ -131,7 +131,7 @@ function createLayer3(x, layerPurpose, color) {
 	const NH = h / nodeDiff / 6;
 
 	let p = createP(layerPurpose);
-	p.position(x - p.width / 2, NH + offset + 25);
+	p.position(x - p.width / 2, NH * 2 + offset - 65);
 	p.addClass('blue');
 
 	let circ = {};
