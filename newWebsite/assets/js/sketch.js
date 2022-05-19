@@ -145,18 +145,17 @@ function createLayer3(x, layerPurpose, color) {
 		circ[i] = node;
 	}
 	circles[layerPurpose] = circ;
-	offset = 300;
-	let y = NH + offset - p.height / 2;
+	let y = NH * 2 + offset - p.height / 2;
 	let xPos = w - p.width * 3.6;
 	p = createP('80% Datascientist');
 	p.position(xPos, y);
 
-	y = NH * 2 + offset - p.height / 2;
+	y = NH * 3 + offset - p.height / 2;
 	xPos = w - p.width * 1.4;
 	p = createP('15% Data analyst');
 	p.position(xPos, y);
 
-	y = NH * 3 + offset - p.height / 2;
+	y = NH * 4 + offset - p.height / 2;
 	xPos = w - p.width * 1.45;
 	p = createP('5% Data engineer');
 	p.position(xPos, y);
