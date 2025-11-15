@@ -22,7 +22,7 @@ let commandIndex = latestCommand.length;
 document.addEventListener("keyup", (event) => {
 	event.preventDefault();
 	const keyName = event.key;
-	if (keyName === "²") {
+	if (keyName === "`") {
 		toggleVisibility();
 	}
 });
@@ -62,8 +62,8 @@ const closeTerminal = () => {
 	toggleVisibility();
 };
 
-/* --Let user put terminal fullscreen-- */
-const fullScreen = () => {
+/* --Let user put terminal fully-- */
+const fully = () => {
 	terminal.style.width = "100%";
 	terminal.style.height = "100%";
 };

@@ -1,16 +1,38 @@
 :root {
-	--primary: #202020ff;
-	--secondary: #3f3f3fff;
-	--title: #ffffffff;
-	--subTitle: #f9a602;
-	--text: #fff;
+  --white: #ffffff;
+  --blue: #89cff0;
+  --black: #000000;
+  --yellow_vibrant: #ffd700;
+  --yellow: #d4af37;
+  --yellow_transparent: rgba(212, 175, 55, 0.3);
+  --grey: #aaaaaa;
+  --transparant_black: rgba(0, 0, 0, 0.5);
+  --gradient: linear-gradient(
+        var(--transparant_black),
+        var(--transparant_black)
+      )
+      padding-box,
+    linear-gradient(to right, var(--blue), var(--yellow)) border-box;
+  --card-bg: #9a8f97;
 
-	--start-gradient: #202020ff;
-	--end-gradient: #3f3f3fff;
-	--articles: linear-gradient(
-		to top left,
-		var(--start-gradient),
-		var(--end-gradient)
-	);
-	--shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.8);
+  --accent: #0CCE6B;
+  --primary: var(--accent);
+  --text: #fff8f0;
+  --card-background-transparant: #06191c7c;
+  --card-background: #06191c;
+
+  --secondary-text: #88ff9f;
+  --primary-text: var(--accent);
+
+
+
+  --background: #141414;
+  --accent: #5eb3ce;
+  --primary: var(--accent);
+  --text: #fff8f0;
+  --card-background-transparant: #06191c7c;
+  --card-background: #06191c;
+
+  --secondary-text: #d4ebf2;
+  --primary-text: var(--accent);
 }

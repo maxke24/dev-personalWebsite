@@ -7,6 +7,7 @@ let startTime, elapsed, time, wpm, textContainer, typedCorrectText, typedWrongTe
 let characters = [];
 let wrongCharacters = [];
 let text = romeo;
+let missedCharacters = [];
 
 function initialize() {
 	textContainer = document.querySelector(".to_type");
@@ -43,6 +44,15 @@ function checkIfCorrectKeyIsPressed(pressedKey, toPressKey) {
 	} else {
 		typedWrongText.innerHTML = pressedKey;
 		wrongCharacters.push(pressedKey);
+
+		if (!missedCharacters.includes(toPressKey)){
+			missedCharacters.push(toPressKey);
+		}
+
+
+
+
+		document.querySelector(".mmw").innerText = missedCharacters
 	}
 }
 
@@ -77,7 +87,18 @@ function keepTimeAndCalculateWPM() {
 
 function toggle(e) {
 	e.preventDefault();
-	e.target.innerText === "Shrek" ? (text = shrek) : (text = romeo);
+	console.log(e.target.innerText)
+	switch(e.target.innerText)
+	{
+		case "Shrek":
+			text = shrek;
+			break;
+		case "Romeo & Juliet":
+			text = romeo;
+			break;
+		default:
+			text = bb;
+	}
 	textContainer.innerHTML = text;
 	typedCorrectText.innerText = "";
 	typedWrongText.innerText = "";

@@ -1,0 +1,276 @@
+/*---Fonts---*/
+@font-face {
+	font-family: GreatVibes;
+	src: url(../fonts/GreatVibes-Regular.ttf);
+}
+
+@font-face {
+	font-family: Kameron;
+	src: url(../fonts/Kameron-Regular.ttf);
+}
+
+@font-face {
+	font-family: Jura;
+	src: url(../fonts/Jura-VariableFont_wght.ttf);
+}
+
+@font-face {
+	font-family: Andika;
+	src: url(../fonts/Andika-Regular.ttf);
+}
+
+/*---Containers---*/
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	font-family: Jura;
+	font-weight: 100;
+	width: 100%;
+	overflow: hidden;
+	margin: 0;
+
+	user-select: none;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+main{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	font-family: Jura;
+	font-weight: 100;
+	width: 100%;
+	overflow: hidden;
+	margin: 0;
+}
+
+canvas {
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.scaled {
+	position: absolute;
+}
+
+.scaled,
+main article {
+	/* transition: scale 2s; */
+	color: var(--white);
+	background: var(--transparent_black);
+	padding: 1rem;
+	border-radius: 1rem;
+	width: 35%;
+	background: var(--gradient);
+	border: 0.1px solid transparent;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(4px);
+	border: 1px solid var(--blue);
+	box-shadow: var(--black) 2px 2px 5px 2px;
+}
+
+main article {
+	position: relative;
+	width: 40%;
+	z-index: 1;
+	justify-content: end;
+	align-items: flex-end;
+	margin: 1rem;
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(4px);
+	border: 1px solid var(--blue);
+	box-shadow: var(--black) 2px 2px 5px 2px;
+}
+/*---Text---*/
+main h1 {
+	color: var(--grey);
+	position: fixed;
+	top: 0;
+	font-size: 8rem;
+	margin: 0;
+	font-weight: 100;
+}
+
+main h2 {
+	color: var(--yellow);
+	margin: 0;
+	font-size: 2.5rem;
+	font-weight: 100;
+	padding-bottom: 1rem;
+}
+
+.blue:first-of-type {
+	top: 10rem;
+	position: fixed;
+}
+
+.scaled > p {
+	color: var(--grey);
+	font-size: 1.6rem;
+	padding: 1rem;
+	max-height: 70vh;
+	overflow: auto;
+}
+
+.scaled > h2{
+	padding-bottom: 1rem;
+	font-size: 2rem;
+}
+
+main p {
+	color: var(--grey);
+	font-size: 2rem;
+	font-weight: 100;
+	margin: 0;
+}
+
+main article > p {
+	font-size: 2rem;
+	text-align: justify;
+}
+
+.yellow {
+	color: var(--yellow);
+	font-size: 1.6rem;
+	font-weight: 600;
+}
+
+.blue {
+	color: var(--blue);
+	font-size: 1.6rem;
+	font-weight: 600;
+}
+
+main a {
+	cursor: pointer;
+	border-radius: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(2px);
+}
+
+h2 + p + a {
+	border-radius: 1rem;
+	padding: 1rem;
+	justify-self: flex-end;
+	align-self: end;
+
+	background: var(--yellow_transparent);
+	border: 0.1px solid transparent;
+}
+
+main article > a,
+.scaled > a {
+	padding: 1rem;
+	border-radius: 1rem;
+	cursor: pointer;
+	display: block;
+	width: max-content;
+	height: initial;
+	margin-top: 1rem;
+	border: 1px solid var(--yellow);
+}
+
+p > .link {
+	width: auto;
+	height: auto;
+	margin: auto;
+	padding: auto;
+	z-index: 5;
+	border: none;
+	color: inherit;
+	text-decoration: underline dotted;
+}
+
+span{
+	color: var(--blue);
+	text-align: justify;
+	margin: 0;
+	left: 0px;
+	align-self: flex-start;
+	padding: 1rem 0;
+}
+
+@keyframes example {
+	0% {
+		transform: scale(0.01);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.scaled {
+	animation: example 1s forwards;
+}
+
+img {
+	width: 8vw;
+	left: 2rem;
+	position: fixed;
+	border-radius: 100%;
+}
+
+footer img {
+	width: 3rem;
+	position: relative;
+	margin: 0 0.5rem;
+	left: 0;
+	background: white;
+}
+
+#socials img{
+	border: 1px solid var(--yellow);
+}
+
+#socials #insta, #socials #lightroom{
+	border: 1px solid var(--blue);
+}
+footer > a {
+	width: auto;
+	height: auto;
+	border-radius: initial;
+}
+
+#socials{
+	transition: all 0.2s;
+	background: none;
+	backdrop-filter: none;
+}
+
+#socials:hover{
+	transform: scale(1.2);
+}
+
+footer {
+	position: fixed;
+	display: flex;
+	bottom: 0;
+	flex-direction: row;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	width: 100%;
+	padding-bottom: 0.5rem;
+}
+
+.catPaw {
+	position: fixed;
+	top: -4rem;
+	left: -12rem;
+	padding: 0;
+	margin: 0;
+	filter: invert(20%);
+	transform: rotate(-27deg);
+	width: 25%;
+	height: 25%;
+}

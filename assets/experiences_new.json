@@ -1,0 +1,103 @@
+{
+	"About": {
+		"1": {
+			"Title": "About me",
+      "Description": "Hello, my name is Jelle Max, and I'm a student of data science at Open University. My main interest lies in the fascinating field of AI, which I spend a lot of my free time studying. I'm also passionate about automobiles and motorcycles and enjoy learning more about them whenever I can. Recently, I've been exploring server-related topics. Although I'm still in the early stages of my learning journey, I'm excited to see where this new area of study takes me. If you are interested in me and the things I do, please feel free to look around my website a bit!",
+      "Image": "/assets/images/me-removebg.png"
+		}
+	},
+	"Education": {
+		"1": {
+			"Title": "HDC Latin",
+			"Date": "September 2012 - June 2013",
+			"Description": "After a year of studying Latin, I've come to the realization that language learning isn't my strongest suit. Although I thoroughly enjoyed learning about the language, I struggled to grasp its intricacies and nuances."
+		},
+		"2": {
+			"Title": "HDC Economy",
+			"Date": "September 2013 - June 2014",
+			"Description": "After my experience with Latin, I decided to switch my focus to economics. While I found that I was better suited for this field, it still wasn't a perfect match for me. Despite my challenges, I'm grateful for the knowledge and skills that I gained during my time studying economics."
+		},
+		"3": {
+			"Title": "Miniemeninstituut Commerce",
+			"Date": "September 2015 - June 2017",
+			"Description": "After completing my two years at HDC, I made the decision to switch to Miniemeninstituut. The primary reason for this was my strong interest in informatics. I recognized that commerce would serve as the perfect foundation for my future studies in IT management."
+		},
+		"4": {
+			"Title": "Miniemeninstituut IT management",
+			"Date": "September 2017 - June 2019",
+			"Description": "During my two years at Miniemeninstituut, I delved deep into the world of informatics and found that I had a true passion for it. The curriculum was engaging and challenging, and I had a lot of fun exploring the different topics. The teachers were excellent and provided me with the guidance and support I needed to excel in my studies. They also helped me identify potential career paths that aligned with my interests and strengths. One of the highlights of my time at Miniemeninstituut was the opportunity to participate in an internship abroad. Thanks to the encouragement and connections of my teachers, I was able to gain valuable real-world experience in the field of informatics. This experience further cemented my love for the subject and motivated me to continue exploring different avenues within the field."
+		},
+		"5": {
+			"Title": "Howest AI & Business Professional",
+			"Date": "September 2019 - June 2022",
+			"Description": "After completing my studies at Miniemeninstituut, I made the decision to enroll at Howest. I was drawn to this school because of its reputation for being one of the most challenging institutions in the field of technology. At first, I intended to pursue cyber security, but after some consideration, I ultimately decided to specialize in Artificial Intelligence & Business Professional. My time at Howest has been both rewarding and challenging. The curriculum is rigorous, but the faculty is incredibly supportive and dedicated to helping students achieve their goals. I have gained valuable skills and knowledge in the field of AI, and I am excited to see where this will take me in my career. Despite the challenges, I am grateful for the opportunity to study at such a respected institution and for the experiences and skills that I have gained along the way."
+		},
+		"6":{
+			"Title": "Open university Master Artificial intelligence",
+			"Date": "September 2022 - Present",
+			"Description": "After completing my specialization in Artificial Intelligence & Business Professional at Howest, I knew that I wanted to continue my education in the field of AI. I decided to pursue a master's degree in Artificial Intelligence at Open University. Currently, I am in the pre-master's program at Open University, and I am learning a lot about the advanced concepts and techniques in AI. The curriculum is challenging, but I am passionate about the subject matter, and I am eager to deepen my knowledge and skills in this field. I am confident that my experience at Howest and my current studies at Open University have prepared me well for the demands of the master's program. I am excited to see where this path in AI takes me in my future career, and I am grateful for the opportunity to continue my education at Open University."
+		}
+	},
+	"Experiences": {
+		
+		"1": {
+			"Title": "Bioplanet, Korbeek-lo",
+			"Description": "This was my first experience working as a student, and I took on a position filling shelves and working at the cash register. Although it was a simple job, it taught me a lot about responsibility, teamwork, and customer service. Working at the cash register taught me how to interact with customers in a polite and professional manner. I also had the opportunity to work with a team of coworkers and learned how to collaborate and communicate effectively with others. Overall, this job gave me a solid foundation in basic workplace skills that I still use today, and it taught me the importance of hard work and dedication in any job. I am grateful for this experience, and it has helped me become a better employee and team member in all of my subsequent jobs.",
+			"Image": "assets/images/bioplanet.jpg"
+		},
+		"2": {
+			"Title": "Stag lodge stables, London",
+			"Description": "During this internship, my two classmates and I had the opportunity to work on an exciting project that involved creating an administrative application and a website to automate the appointment system. As the only developers on the project, we were responsible for the entire development process from start to finish. We used our programming skills and knowledge of web development to design and develop a user-friendly interface that allowed users to easily schedule appointments and manage their accounts. We worked closely with the client to ensure that the application and website met their needs and requirements. Throughout this internship, we learned a lot about project management, software development, and teamwork. We gained valuable experience working in a professional environment and collaborating with other stakeholders to achieve a common goal. We also learned how to communicate effectively with clients to ensure that their needs were met. Overall, this internship was a great learning experience and helped us to further develop our technical skills and professional abilities. We are grateful for the opportunity to work on this project and contribute to the success of the company.",
+			"Image": "assets/images/stag.jpg"
+		},
+		"3": {
+			"Title": "Sint-kamillus, Bierbeek",
+			"Description": "During my first job at Sint-Kamillus, my main responsibility was managing the call center for internal personnel. I helped employees with their IT-related inquiries and provided technical support as needed. Additionally, I was in charge of maintaining several applications and updating passwords for printers and cameras. Recently, I have been working on a script that can automate the process of creating user accounts via PowerShell. This script will help to streamline the procedure and make it more efficient for my colleagues. I am excited to see the impact this tool will have on our team's productivity and look forward to sharing it with my colleagues. Overall, my experience at Sint-Kamillus has provided me with valuable technical skills and has helped me to develop a strong work ethic. I am grateful for the opportunities I've had to learn and grow in this role and look forward to continuing to contribute to the success of the team.",
+			"Image": "assets/images/kamillus.jpg"
+		},
+		"4": {
+			"Title": "Proximus, Brussels",
+			"Description": "After working as a programmer for some time, I was given the chance to join the data scientist team for my internship. During this exciting opportunity, I was tasked with reworking an old project and assisting with the data cleaning process. It was a great experience to work with a team of experts in this field and to apply my programming skills to real-world projects.\nThroughout my internship, I gained a deeper understanding of the data science process and the importance of data quality in achieving accurate results. I also learned valuable technical skills such as data preprocessing and cleaning techniques, which are critical for success in this field.Overall, my time with the data scientist team was a challenging and rewarding experience that has deepened my passion for data science. I am excited to continue pursuing this field and look forward to contributing to future projects.",
+			"Image": "assets/images/proximus.jpg"
+		}
+	},
+	"Projects": {
+		"1": {
+			"Title": "Plant disease project",
+			"Description": "Working on my first pure AI project was a great opportunity for me to apply my skills to real-world problems. Our task was to create a model that could accurately predict the disease of a plant based on an input image. The project was challenging, but also rewarding. We had to research and experiment with various deep learning techniques to achieve accurate results. I also gained experience in data preprocessing and data augmentation, which proved crucial for achieving optimal performance. By the end of the project, our team had developed a not so highly accurate model that could predict the disease of a plant with good enough accuracy. This experience not only reinforced my passion for AI, but also taught me the importance of collaboration and persistence in achieving success. Overall, this project was a valuable learning experience that prepared me for more complex AI projects in the future.",
+			"Image": "assets/images/kamillus.jpg"
+		},
+		"2": {
+			"Title": "Prophesea price lstm project",
+			"Description": "Prophesea was the first time we had the opportunity to work with a real business on an AI project. Our goal was to create an LSTM model that could predict price fluctuations. We were excited about the challenge and eager to apply our skills and knowledge to solve a real-world problem.\nDuring the project, we encountered several challenges and setbacks. The data we received from the company was noisy and difficult to work with, and we had to spend a lot of time cleaning and pre-processing it. We also tried different modeling techniques and hyperparameter tuning to improve the accuracy of our model, but the end result was not as accurate as we had hoped.\nDespite these challenges, Prophesea was still very pleased with the outcome of the project. They appreciated our hard work and dedication, and saw the value in our efforts. The project was a valuable learning experience for us as well. We gained hands-on experience with real-world data and challenges, and learned how to collaborate effectively with a business client.\nOverall, Prophesea was a great partner to work with, and we are grateful for the opportunity to have collaborated with them on this project. We look forward to applying the lessons we learned to future projects and continuing to develop our skills in AI and machine learning.",
+			"Image": "assets/images/prophesea.jpg"
+		}
+	},
+	"Extras": {
+		"1": {
+			"Title": "Bachelor thesis Dimensionality reduction",
+			"Description": "During my last year at Howest, I faced the daunting task of writing a bachelor thesis. After much consideration, I decided to focus on the topic of dimensionality reduction techniques. Although it was a challenging topic and I had no prior experience, I was excited to delve into it. As I delved deeper into the subject matter, I encountered a lot of obstacles and struggled to make progress. However, I remained committed and persevered through the challenges. Through hard work and determination, I was able to gain a deeper understanding of the topic and make significant progress on my thesis. Throughout the process, I found myself increasingly drawn to the intricacies and complexities of dimensionality reduction techniques. Despite the challenges, I remained passionate about the topic and ultimately completed a thesis that I am proud of. Looking back on the experience, I am grateful for the opportunity to have worked on such a challenging and rewarding project. The experience not only allowed me to gain valuable knowledge and skills, but also instilled in me a sense of confidence and perseverance that I will carry with me throughout my career. You can always see my finished product here:",
+			"Link": "https://studenthowest-my.sharepoint.com/:w:/g/personal/jelle_max_student_howest_be/EanmmwP1nXlInD1swLZwvQ8BPss6RWUaDWe5oVeJUU2YMg?e=YHhYt8"
+		},
+		"2": {
+			"Title": "Curriculum Vitae",
+			"Description": "Are you already convinced? Please do check out my cv then (english version coming soon)!: ",
+			"Link": "https://docs.google.com/document/d/1vNPrh6XOjtBUABHaJdGgTBd2Zmklc_X41r_Iq1UdOTM/edit#heading=h.aagfqklm9zwt"
+		} 
+	},
+
+	"Output": {
+		"1": {
+			"Title": "Data scientist",
+			"Description": "My greatest passion lies in the field of data science. I am most fulfilled when I am creating and refining AI models, constantly striving for the optimal solution. There is something truly satisfying about analyzing data, testing different approaches, and ultimately arriving at the best possible outcome."
+		},
+		"2": {
+			"Title": "Data analyst",
+			"Description": "While my passion lies in data science, I also find myself drawn to the world of data analysis from time to time. Although it may not be my primary focus, I still enjoy the challenge of exploring and interpreting data sets to gain valuable insights. It's always satisfying to see how data analysis can help inform decision-making and improve outcomes, whether it's in the context of business, healthcare, or any other field."
+		},
+		"3": {
+			"Title": "Data engineer",
+			"Description": "Although I have experience in various data-related roles, data engineering is not my strongest area of expertise. I find it challenging and it is not something I particularly enjoy doing. Therefore, I prefer to focus on other aspects of data science that are more aligned with my interests and strengths."
+		}
+	}
+}
